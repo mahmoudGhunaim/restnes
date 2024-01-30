@@ -5,6 +5,16 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@easepick/bundle": "^1.2.1",
+    "@easepick/core": "^1.2.1",
+    "@easepick/datetime": "^1.2.1",
+    "@easepick/lock-plugin": "^1.2.1",
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.15.6",
+    "@mui/material": "^5.15.6",
+    "@mui/styled-engine-sc": "^6.0.0-alpha.13",
+    "axios": "^1.6.7",
     "gatsby": "^5.13.2",
     "gatsby-plugin-image": "^3.13.1",
     "gatsby-plugin-manifest": "^5.13.1",
@@ -12,7 +22,9 @@
     "gatsby-source-filesystem": "^5.13.1",
     "gatsby-transformer-sharp": "^5.13.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "styled-components": "^6.1.8",
+    "swiper": "^11.0.5"
   },
   "devDependencies": {
     "prettier": "^2.8.8"

@@ -1,0 +1,32 @@
+// src/components/SearchForm.js
+import React, { useState } from 'react';
+import { getProperties } from '../services/hostaway';
+
+const SearchForm = () => {
+  const [checkInDate, setCheckInDate] = useState('');
+  const [checkOutDate, setCheckOutDate] = useState('');
+  const [adults, setAdults] = useState(0);
+  const [children, setChildren] = useState(0);
+  
+  const handleSearch = async () => {
+    try {
+      const results = await getProperties(checkInDate, checkOutDate, adults + children);
+      // Do something with the results
+      console.log(results);
+    } catch (error) {
+      // Handle the error
+      console.error(error);
+    }
+  };
+
+  return (
+    <div>
+      <div className="button-container">
+          <button type="submit"><img src='search-normal.svg'/></button>
+        </div>
+      {/* Bind the input values to your state and on submit call handleSearch */}
+    </div>
+  );
+};
+
+export default SearchForm;

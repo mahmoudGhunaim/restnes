@@ -1,0 +1,186 @@
+@font-face {
+    font-family: 'League Spartan';
+    src: local('League Spartan'), url('../../../Fonts/League_Spartan/LeagueSpartan-VariableFont_wght.ttf') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Lavishly Yours';
+    src: local('Lavishly Yours'), url('../../../Fonts/Lavishly_Yours/LavishlyYours-Regular.ttf') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+*{
+    margin: 0;
+}
+body{
+    background: rgba(248, 248, 248, 1);
+}
+.Home-Head-sec{
+    background: rgba(34, 41, 51, 1);
+    display: flex;
+    justify-content: center;
+    padding: 100px 0;
+}
+.Home-Head-container{
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+}
+.Home-left-sec h1{
+    color: rgba(255, 255, 255, 1);
+    font-size: 64px;
+    font-weight: 400;
+    width: 45%;
+    font-family: 'Cinzel', serif;
+}
+.Home-left-sec span{
+    color: rgba(172, 149, 118, 1);
+    font-size: 64px;
+    font-family: 'Lavishly Yours', serif;
+    position: absolute;
+    top: 160px;
+    left: 25%;
+    rotate: -12deg;
+}
+.Home-right-sec{
+    width: 20%;
+}
+.Home-right-sec p{
+    color: rgba(255, 255, 255, 1);
+    font-family: 'League Spartan', serif;
+    width: 100%;
+    line-height: 25px;
+    font-weight: 300;
+    font-size: 18px;
+}
+.Home-right-sec button{
+    background: rgba(172, 149, 118, 1);
+    padding: 16px 32px;
+    border: none !important;
+    color: rgba(255, 255, 255, 1);
+    font-size: 18px;
+    margin-top: 20px;
+    font-family: 'Cinzel', serif;
+}
+.sec-img-home img{
+    width: 100%;
+    height: 700px;
+    object-fit: cover;
+}
+.description-home-sec{
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+}
+.description-home-container{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  
+}
+.description-home-title h1{
+    text-align: center;
+    font-size: 50px;
+    font-weight: 400;
+    font-family: 'Cinzel', serif;
+    margin-bottom: 20px;
+}
+.description-home-line{
+    border-top:1px solid rgba(172, 149, 118, 1) ;
+    width: 400px;
+    margin-bottom: 50px;
+}
+.description-home-p p{
+    font-family: 'League Spartan', serif;
+    font-size: 18px;
+    color: rgba(34, 41, 51, 1);
+    text-align: center;
+    line-height: 30px;
+}
+.description-home-p p:nth-child(1){
+    margin-bottom: 50px;
+}
+/*Card*/
+section.card-sec-home {
+    display: flex;
+    justify-content: center;
+    padding: 100px 0;
+}
+.card-container-home{
+    width: 90%;
+}
+.card-title-home h1{
+    font-size: 50px;
+    font-family: 'Cinzel', serif;
+    font-weight: 400;
+    text-align: center;
+}
+.card-content-home{
+    margin-top: 80px;
+    display: grid;
+    grid-gap: 80px;
+    grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+}
+.cards-home {
+    display: flex;
+    text-align: center;
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+     border-width: 4px;
+     border-style: solid;
+     border-image: linear-gradient(348.49deg, #AC9576 , rgba(172, 149, 118, 0),#AC9576,rgba(172, 149, 118, 0)) 1;
+     position: relative;
+     display: inline-flex;
+     justify-content: center;
+     align-items: center;
+     color: darkblue;
+}
+.cards-home img{
+    margin-top: 30px;
+    width: 60px;
+    height: 60px;
+}
+.cards-home h1{
+    margin-top: 33px;
+    margin-bottom: 43px;
+    font-size: 26px;
+    width: 70%;
+    font-family: 'Cinzel', serif;
+    color: rgba(34, 41, 51, 1);
+    
+}
+.cards-home p{
+    font-size: 18px;
+    width: 70%;
+    line-height: 30px;
+    font-family: 'League Spartan', serif;
+    color: rgba(34, 41, 51, 1);
+}
+/*slider*/
+.slider-container-home{
+    margin-bottom: 100px;
+}
+.slider-title-home-con {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 70px;
+
+}
+.slider-title-home{
+    width: 90%;
+}
+.slider-title-home h1{
+    font-size: 50px;
+    font-family: 'Cinzel', serif;
+    width: 50%;
+}
+.swiper-button-next:after, .swiper-rtl .swiper-button-prev:after{
+    content: url('/arrow-right.svg') !important;
+}
+.swiper-button-prev:after, .swiper-rtl .swiper-button-next:after{
+    content: url('/arrow-left.svg') !important;
+}

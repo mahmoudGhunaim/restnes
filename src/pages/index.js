@@ -1,128 +1,159 @@
-import * as React from "react"
+import React, { useRef } from 'react';
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
-
+import "../components/style/index.css"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import * as styles from "../components/index.module.css"
-
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-  },
-  {
-    text: "Examples",
-    url: "https://github.com/gatsbyjs/gatsby/tree/master/examples",
-    description:
-      "A collection of websites ranging from very basic to complex/complete that illustrate how to accomplish specific tasks within your Gatsby sites.",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Learn how to add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-  },
-  {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
-    description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
-  },
-]
-
-const samplePageLinks = [
-  {
-    text: "Page 2",
-    url: "page-2",
-    badge: false,
-    description:
-      "A simple example of linking to another page within a Gatsby site",
-  },
-  { text: "TypeScript", url: "using-typescript" },
-  { text: "Server Side Rendering", url: "using-ssr" },
-  { text: "Deferred Static Generation", url: "using-dsg" },
-]
-
-const moreLinks = [
-  { text: "Join us on Discord", url: "https://gatsby.dev/discord" },
-  {
-    text: "Documentation",
-    url: "https://gatsbyjs.com/docs/",
-  },
-  {
-    text: "Starters",
-    url: "https://gatsbyjs.com/starters/",
-  },
-  {
-    text: "Showcase",
-    url: "https://gatsbyjs.com/showcase/",
-  },
-  {
-    text: "Contributing",
-    url: "https://www.gatsbyjs.com/contributing/",
-  },
-  { text: "Issues", url: "https://github.com/gatsbyjs/gatsby/issues" },
-]
-
-const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
+import Form from "../components/form"
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import CustmerSay from "../components/CustmerSay"
+import { Swiper, SwiperSlide } from 'swiper/react';
+import FooterSec from '../components/FooterSec';
 
 const IndexPage = () => (
   <Layout>
-    <div className={styles.textCenter}>
-      <StaticImage
-        src="../images/example.png"
-        loading="eager"
-        width={64}
-        quality={95}
-        formats={["auto", "webp", "avif"]}
-        alt=""
-        style={{ marginBottom: `var(--space-3)` }}
-      />
-      <h1>
-        Welcome to <b>Gatsby!</b>
-      </h1>
-      <p className={styles.intro}>
-        <b>Example pages:</b>{" "}
-        {samplePageLinks.map((link, i) => (
-          <React.Fragment key={link.url}>
-            <Link to={link.url}>{link.text}</Link>
-            {i !== samplePageLinks.length - 1 && <> · </>}
-          </React.Fragment>
-        ))}
-        <br />
-        Edit <code>src/pages/index.js</code> to update this page.
-      </p>
+    <section className='Home-Head-sec'>
+      <div className='Home-Head-container'>
+        <div className='Home-left-sec'>
+          <h1>Book your British Columbia experience</h1>
+          <span>Luxury rentals</span> 
+        </div>
+        <div className='Home-right-sec'>
+          <div>
+          <p>
+            Treat yourself to the perfect getaway with our selection of British Columbia’s most exquisite short-term rental properties in Kelowna, Whistler, and Vancouver.
+          </p>
+          <button>Explore all properties</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div className="sec-img-home">
+      <img src="head-home-img.svg"/>
     </div>
-    <ul className={styles.list}>
-      {links.map(link => (
-        <li key={link.url} className={styles.listItem}>
-          <a
-            className={styles.listItemLink}
-            href={`${link.url}${utmParameters}`}
-          >
-            {link.text} ↗
-          </a>
-          <p className={styles.listItemDescription}>{link.description}</p>
-        </li>
-      ))}
-    </ul>
-    {moreLinks.map((link, i) => (
-      <React.Fragment key={link.url}>
-        <a href={`${link.url}${utmParameters}`}>{link.text}</a>
-        {i !== moreLinks.length - 1 && <> · </>}
-      </React.Fragment>
-    ))}
+    <div>
+      <div>
+        <Form/>
+      </div>
+      <section className="description-home-sec">
+        <div className="description-home-container">
+          <div className="description-home-title">
+            <h1>Elevate Your Vacation Experience</h1>
+          </div>
+          <div className="description-home-line"></div>
+          <div className="description-home-p">
+            <p>From the moment you arrive at your stunning vacation home, whether it's amidst the beautiful vineyards of Kelowna, the majestic mountains of Whistler, or the vibrant cityscape of Vancouver, you’ll be enamored by the charm and luxury we offer.</p>
+            <p>Indulge in first-class comfort with our lavish properties, complete with luxury amenities and concierge service dedicated to your every desire. Focus on the finer aspects of life, like creating unforgettable memories with your loved ones in British Columbia's most desirable destinations.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+    <section className="card-sec-home">
+      <div className="card-container-home">
+        <div className="card-title-home">
+          <h1>The benefits of booking direct</h1>
+          
+        </div>
+        <div className="card-content-home">
+              <div className="cards-home">
+                <img src="gem 1.svg"/>
+                <h1>Luxury, for less</h1>
+                <p>Enjoy pristine landscapes and sparkling pools at a rate more affordable than you imagine. Booking direct saves you 15%, whether it's a cozy chalet in Whistler, a modern loft in Vancouver, or a luxurious estate in Kelowna</p>
+              </div>
+              <div className="cards-home">
+                <img src="user-shield-solid 1.svg"/>
+                <h1>Personal concierge service</h1>
+                <p>Every RestNest booking includes a dedicated concierge, local to your chosen city, committed to making your stay memorable and comfortable. No middle man, just personalized service.</p>
+              </div>
+              <div className="cards-home">
+                <img src="peace-solid 1.svg"/>
+                <h1>Quality Insurance for Peace of Mind.</h1>
+                <p>In addition to offering lower rates, booking directly through RestNest ensures higher quality insurance than competing platforms, providing you with the assurance you need to relax and enjoy.</p>
+              </div>
+        </div>
+      </div>
+    </section>
+    <section className="slider-home">
+      <div className="slider-container-home">
+        <div className="slider-title-home-con">
+        <div className="slider-title-home">
+          <h1>Don't just take our word for it—read what our guests have to say!</h1>
+          //add here
+        </div>
+        </div>
+      <Swiper
+                       breakpointsInverse= {true}
+                       breakpoints={{
+                         640: {
+                           slidesPerView: 1,
+                           spaceBetween: 20,
+                         },
+                         768: {
+                           slidesPerView: 1,
+                           spaceBetween: 40,
+                         },
+                         1024: {
+                           slidesPerView: 1,
+                           spaceBetween: 50,
+                         },
+                         1030: {
+                           slidesPerView: 1,
+                           spaceBetween: 50,
+                         },
+                       }}
+              modules={[Navigation, Pagination, Scrollbar, A11y]}
+              spaceBetween={0}
+              // slidesPerView={4}
+              navigation
+              direction="horizontal"
+              pagination={{ clickable: true }}
+              scrollbar={{ draggable: true }}
+              onSwiper={(swiper) => console.log(swiper)}
+              onSlideChange={() => console.log('slide change')}
+              >
+              <div className="clients-slider">
+                  <SwiperSlide><CustmerSay
+                  imgSrc="3 (1) 2.svg"
+                  des="Staying at this luxury rental property was a dream come true!  Every detail was carefully curated to perfection, making our stay an unforgettable retreat into luxury. A heartfelt thanks for turning our getaway into an extraordinary memory. Can't wait to return and relive the magic!" 
+                  Name="Diana Rachel"
+                  location="Entire condo in Banff, Canada"
+                  /></SwiperSlide>
+                  <SwiperSlide><CustmerSay
+                  imgSrc="3 (1) 2.svg"
+                  des="Staying at this luxury rental property was a dream come true!  Every detail was carefully curated to perfection, making our stay an unforgettable retreat into luxury. A heartfelt thanks for turning our getaway into an extraordinary memory. Can't wait to return and relive the magic!" 
+                  Name="Diana Rachel"
+                  location="Entire condo in Banff, Canada"
+                  /></SwiperSlide>
+                  <SwiperSlide><CustmerSay
+                  imgSrc="3 (1) 2.svg"
+                  des="Staying at this luxury rental property was a dream come true!  Every detail was carefully curated to perfection, making our stay an unforgettable retreat into luxury. A heartfelt thanks for turning our getaway into an extraordinary memory. Can't wait to return and relive the magic!" 
+                  Name="Diana Rachel"
+                  location="Entire condo in Banff, Canada"
+                  /></SwiperSlide>
+                  <SwiperSlide><CustmerSay
+                  imgSrc="3 (1) 2.svg"
+                  des="Staying at this luxury rental property was a dream come true!  Every detail was carefully curated to perfection, making our stay an unforgettable retreat into luxury. A heartfelt thanks for turning our getaway into an extraordinary memory. Can't wait to return and relive the magic!" 
+                  Name="Diana Rachel"
+                  location="Entire condo in Banff, Canada"
+                  /></SwiperSlide>
+                  <SwiperSlide><CustmerSay
+                  imgSrc="3 (1) 2.svg"
+                  des="Staying at this luxury rental property was a dream come true!  Every detail was carefully curated to perfection, making our stay an unforgettable retreat into luxury. A heartfelt thanks for turning our getaway into an extraordinary memory. Can't wait to return and relive the magic!" 
+                  Name="Diana Rachel"
+                  location="Entire condo in Banff, Canada"
+                  /></SwiperSlide>
+            
+              </div>
+              
+          </Swiper>
+      </div>
+    </section>
+    <FooterSec/>
   </Layout>
 )
 
-/**
- * Head export to define metadata for the page
- *
- * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
- */
-export const Head = () => <Seo title="Home" />
+
 
 export default IndexPage

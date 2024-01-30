@@ -8,9 +8,9 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
-import "./layout.css"
-
+import Header from "./Header"
+import "./style/layout.css"
+import { Link } from "gatsby"
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -33,15 +33,30 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `var(--space-5)`,
-            fontSize: `var(--font-sm)`,
-          }}
-        >
-          © {new Date().getFullYear()} &middot; Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
+        <footer className="footer">
+          <div className="footer-container">
+            <div className="sec-footer-logo">
+              <img src="Restnest.svg"/>
+              <Link to="/Services"><img src="map-marked-alt-solid 1.svg"/>3635 Carrington Rd West<br/> Kelowna, BC</Link>
+              <Link to="/Services"><img src="phone-solid 1.svg"/>7788584942</Link>
+              <Link to="/Services"><img src="envelope-open-text-solid 1.svg"/>info@restnest.ca</Link>
+            </div>
+            <div className="sec-footer">
+              <Link to="/Services">Home</Link>
+              <Link to='/Clients'>Blog</Link>
+              <Link to="/About">Properties</Link>
+            </div>
+            <div className="sec-footer">
+              <Link to='/ContactUs' >Contact Us</Link>
+              <Link to='/ContactUs' >Our Story</Link>
+              <Link to='/ContactUs' >Rental Agreement</Link>
+            </div>
+            <div className="sec-footer">
+              <Link to='/ContactUs' >Good Neighbor</Link>
+              <Link to='/ContactUs' >Policies</Link>
+              <Link to='/Projects'>FAQ</Link>
+            </div>            
+          </div>
         </footer>
       </div>
     </>

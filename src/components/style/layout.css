@@ -1,0 +1,87 @@
+@font-face {
+  font-family: 'Cinzel';
+  src: local('Cinzel'), url('../../../Fonts/Cinzel/Cinzel-VariableFont_wght.ttf') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+body{
+  margin: 0;
+  padding: 0;
+}
+.header-sec{
+  background: rgba(34, 41, 51, 1);
+  display: flex;
+  justify-content: center;
+}
+.header-container{
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.link-family{
+  display: flex;
+  gap: 40px;
+  font-family: 'Cinzel', serif;
+}
+.link-family a{
+  color: rgba(255, 255, 255, 1);
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 400;
+}
+.login-sec{
+  background: rgba(172, 149, 118, 1);
+  padding: 30px;
+}
+.login-sec a{
+  color: rgba(255, 255, 255, 1);
+  text-decoration: none ;
+  font-size: 18px;
+  font-family: 'Cinzel', serif;
+  font-weight: 400;
+}
+.footer{
+  background: rgba(34, 41, 51, 1);
+  padding: 100px 0;
+  display: flex;
+  justify-content: center;
+
+}
+.footer-container{
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+.sec-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 80px;
+}
+.sec-footer a{
+  font-size: 18px;
+  font-family: 'Cinzel', serif;
+  text-decoration: none;
+  color: rgba(245, 245, 245, 1);
+}
+.sec-footer-logo{
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.sec-footer-logo img{
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+.sec-footer-logo a{
+  font-size: 18px;
+  font-family: 'League Spartan', serif;
+  text-decoration: none;
+  color: rgba(245, 245, 245, 1);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  line-height: 25px;
+}
