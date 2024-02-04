@@ -10,7 +10,7 @@ const mapStyles = {
   height: '450px',
 };
 const PropertiesDetail = (props) => {
-
+  const [selectedOption, setSelectedOption] = useState('Auto');
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
@@ -26,6 +26,7 @@ const PropertiesDetail = (props) => {
   const [amenities, setAmenities] = useState([]); // Assumed to be part of your listing data
   const [activeMarker, setActiveMarker] = useState({});
   const [showingInfoWindow, setShowingInfoWindow] = useState(false);
+  const [nights, setNights] = useState(0);
   
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -35,11 +36,28 @@ const PropertiesDetail = (props) => {
     return year + '-' + month + '-' + day;
   };
   const calculateNumberOfNights = (startDate, endDate) => {
-    const oneDay = 24 * 60 * 60 * 1000; // One day in milliseconds
-    const start = new Date(startDate);
-    const end = new Date(endDate);
-    const nights = Math.round(Math.abs((end - start) / oneDay));
-    return nights;
+    if (startDate && endDate) {
+      const oneDay = 24 * 60 * 60 * 1000; // One day in milliseconds
+      const start = new Date(startDate);
+      const end = new Date(endDate);
+      const calculatedNights = Math.round(Math.abs((end - start) / oneDay));
+      setNights(calculatedNights); // Update nights in the component state
+      return calculatedNights;
+    } else {
+      setNights(0); // Set nights to 0 if startDate or endDate is missing
+      return 0;
+    }
+  };
+  const handleDateChange = (newStartDate, newEndDate) => {
+    setStartDate(newStartDate);
+    setEndDate(newEndDate);
+
+    if (newStartDate && newEndDate) {
+      // Check if "Auto" is selected (modify the condition accordingly)
+      if (selectedOption === 'Auto') {
+        calculateNumberOfNights(newStartDate, newEndDate);
+      }
+    }
   };
   const handleBooking = (e) => {
     e.preventDefault(); // Prevent the default form submission
@@ -67,6 +85,7 @@ const PropertiesDetail = (props) => {
     setActiveMarker(marker);
     setShowingInfoWindow(true);
   };
+  var data;
   useEffect(() => {
     const queryParams = new URLSearchParams(window.location.search);
     const fetchData = async () => {
@@ -79,16 +98,17 @@ const PropertiesDetail = (props) => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
-        const data = await response.json();
+        data = await response.json();
         setListings([data.result]); // Assuming 'result' contains the listing data including amenities
         setAmenities(data.result.amenities || []); // Assuming amenities are part of the listing data
       } catch (error) {
         setError(error.message);
       }
     };
-
+    
     fetchData();
   }, []);
+
   // const amenityImages = {
   //   'Wireless': 'wifi-solid 1',
   //   'Free WiFi': 'wifi-solid 1',
@@ -109,6 +129,59 @@ const PropertiesDetail = (props) => {
   //   const imagePath = `/${amenityImages[amenityName] || imageName}.svg`;
   //   return imagePath;
   // };
+//   const queryParams = new URLSearchParams(window.location.search);
+//   const ids = queryParams.get('listingMapId'); // Replace with your actual ID value
+// const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI1ODYyMCIsImp0aSI6ImMyZmI1YjRiM2UxOGIyNWE0N2IwYWU5MmRiZDRlMjljNGY2MTg3MDRlY2M5MWM5ZTA5MDJlYzg4MWMzMjc4Y2MwOTZiODlkYjA0Y2ZmMjE3IiwiaWF0IjoxNjgwMjAxODE3LCJuYmYiOjE2ODAyMDE4MTcsImV4cCI6MTc0MzM2MDIxNywic3ViIjoiIiwic2NvcGVzIjpbImdlbmVyYWwiXSwic2VjcmV0SWQiOjEzNzAyfQ.ILnp24OkuH18ylsP6DDMWYX11fywUNi1XU_D5iPfpuDOFLpW4tcEQHlaYb94u8O3pERnv1iYENz_KPT6WGI6qFhL-gBA_tM10GWhJuZrSukIJYDWyv7x-WWsmfpUMcsvcQYXyWksAWY-wcCS4RmFtVIw0KWtVGJMy_h_yRs8Ypw'; // Replace with your actual token value
+// console.log('debug',JSON.stringify(data) );
+// fetch(`https://api.hostaway.com/v1/listings/${ids}/calendar/priceDetails`, {
+//   method: 'POST',
+//   headers: {
+//     'Content-Type': 'application/json',
+//     'Authorization': `Bearer ${token}`
+//   },
+//   data : {
+//     startingDate: startDate,
+//     endingDate: endDate,
+//     numberOfGuests: guests
+//   },
+//   body: JSON.stringify(data) // Make sure 'data' is defined with your desired JSON data
+// })
+// .then(response => response.json())
+// .then(data => {
+//   console.log(data); // Log the response data
+// })
+// .catch(error => {
+//   console.error('Error:', error);
+// });
+const fetchData = async () => {
+  try {
+    const queryParams = new URLSearchParams(window.location.search);
+    const id = queryParams.get('listingMapId'); // Replace with your actual ID value
+    const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI1ODYyMCIsImp0aSI6ImMyZmI1YjRiM2UxOGIyNWE0N2IwYWU5MmRiZDRlMjljNGY2MTg3MDRlY2M5MWM5ZTA5MDJlYzg4MWMzMjc4Y2MwOTZiODlkYjA0Y2ZmMjE3IiwiaWF0IjoxNjgwMjAxODE3LCJuYmYiOjE2ODAyMDE4MTcsImV4cCI6MTc0MzM2MDIxNywic3ViIjoiIiwic2NvcGVzIjpbImdlbmVyYWwiXSwic2VjcmV0SWQiOjEzNzAyfQ.ILnp24OkuH18ylsP6DDMWYX11fywUNi1XU_D5iPfpuDOFLpW4tcEQHlaYb94u8O3pERnv1iYENz_KPT6WGI6qFhL-gBA_tM10GWhJuZrSukIJYDWyv7x-WWsmfpUMcsvcQYXyWksAWY-wcCS4RmFtVIw0KWtVGJMy_h_yRs8Ypw'; // Replace with your actual token value
+
+    const response = await fetch(`https://api.hostaway.com/v1/listings/${id}/calendar/priceDetails`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      },
+      body: JSON.stringify(data) // Make sure 'data' is defined with your desired JSON data
+    });
+
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+
+    const responseData = await response.json();
+    console.log(responseData); // Log the response data
+  } catch (error) {
+    console.error('Error:', error);
+  }
+};
+
+// Call fetchData when needed
+fetchData();
+
   useEffect(() => {
     const fetchDates = async () => {
       try {
@@ -262,24 +335,30 @@ const PropertiesDetail = (props) => {
           <div className="form-group">
             <label htmlFor="checkIn">Check In</label>
             <DatePicker
-              selected={startDate}
-              onChange={(date) => setStartDate(date)}
-              dateFormat="yyyy-MM-dd"
-              id="checkIn"
-              className="form-control"
-              placeholderText="Select Check-In Date"
-            />
+  selected={startDate}
+  onChange={(date) => {
+    setStartDate(date);
+    handleDateChange(date, endDate); // Adjust to call handleDateChange
+  }}
+  dateFormat="yyyy-MM-dd"
+  id="checkIn"
+  className="form-control"
+  placeholderText="Select Check-In Date"
+/>
           </div>
           <div className="form-group">
             <label htmlFor="checkOut">Check Out</label>
             <DatePicker
-              selected={endDate}
-              onChange={(date) => setEndDate(date)}
-              dateFormat="yyyy-MM-dd"
-              id="checkOut"
-              className="form-control"
-              placeholderText="Select Check-Out Date"
-            />
+  selected={endDate}
+  onChange={(date) => {
+    setEndDate(date);
+    handleDateChange(startDate, date); // Adjust to call handleDateChange
+  }}
+  dateFormat="yyyy-MM-dd"
+  id="checkOut"
+  className="form-control"
+  placeholderText="Select Check-Out Date"
+/>
           </div>
           </div>
           <div className="form-group">
@@ -302,15 +381,18 @@ const PropertiesDetail = (props) => {
 
         </form>
           <div className='desc-booking'>
-          {/* <div>
-              <p>Cleaning fee</p>
-              <p>${firstListing.price} x {calculateNumberOfNights} nights</p>
-            </div> */}
-            <div>
+          <div className='desc-booking-detail'>              
+          <p>${firstListing.price} x {nights} nights</p>
+        <p>${firstListing.price * nights}</p>
+            </div>
+            <div className='desc-booking-detail'>
               <p>Cleaning fee</p>
               <p>${firstListing.cleaningFee}</p>
             </div>
-           
+            <div className='desc-booking-detail'>
+              <p>Total before taxes</p>
+              <p>${firstListing.cleaningFee + firstListing.price * nights}</p>
+            </div>
           </div>
            </div>
         </div>

@@ -256,3 +256,26 @@ button.btn.btn-primary{
     margin-top: 36px;
     padding: 16px;
 }
+.desc-booking{
+    margin-top: 30px;
+}
+.desc-booking-detail:nth-child(2){
+    margin-top: 20px;
+}
+.desc-booking-detail:nth-child(3){
+    margin-top: 20px;
+}
+.desc-booking-detail{
+    display: flex;
+    justify-content: space-between;
+}
+.desc-booking-detail p{
+    font-family: 'League Spartan';
+    font-size: 17px;
+    color: rgba(34, 41, 51, 1);
+}
+.desc-booking-detail:nth-child(3) p{
+    font-size: 18px;
+    font-weight: 400;
+    color: rgba(34, 41, 51, 1);
+}
