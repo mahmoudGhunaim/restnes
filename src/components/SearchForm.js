@@ -22,7 +22,7 @@ const SearchForm = () => {
   return (
     <div>
       <div className="button-container">
-          <button type="submit"><img src='search-normal.svg'/></button>
+          <button type="submit"><img src='/search-normal.svg'/></button>
         </div>
       {/* Bind the input values to your state and on submit call handleSearch */}
     </div>

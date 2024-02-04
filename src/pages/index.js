@@ -79,8 +79,7 @@ const IndexPage = () => (
       <div className="slider-container-home">
         <div className="slider-title-home-con">
         <div className="slider-title-home">
-          <h1>Don't just take our word for it—read what our guests have to say!</h1>
-          //add here
+          <h1 >Don't just take our word for it—read what our guests have to say!</h1>
         </div>
         </div>
       <Swiper
@@ -108,7 +107,7 @@ const IndexPage = () => (
               // slidesPerView={4}
               navigation
               direction="horizontal"
-              pagination={{ clickable: true }}
+              // pagination={{ clickable: true }}
               scrollbar={{ draggable: true }}
               onSwiper={(swiper) => console.log(swiper)}
               onSlideChange={() => console.log('slide change')}

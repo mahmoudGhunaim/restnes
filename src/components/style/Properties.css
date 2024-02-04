@@ -1,0 +1,91 @@
+.form-property{
+  margin-top: 70px;
+  padding: 50px 0;
+}
+.properties-sec{
+  display: flex;
+  justify-content: center;
+  padding: 120px 0;
+}
+.properties-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Four columns per row */
+    gap: 20px; 
+    width: 90%;
+  }
+  
+  /* CSS for individual property cards */
+  .property-card {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    max-width: 360px;
+  }
+  
+  /* Additional styling for images, headings, and property details */
+  .property-card img {
+    width: 360px; /* Ensure images fit within their containers */
+    max-height: 203px;
+  }
+  
+  .property-card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  .property-card a{
+    text-decoration: none;
+  }
+  
+  .property-card .card-des {
+    display: flex;
+    justify-content: space-between;
+  }
+  .properties-card-des{
+    padding: 11px;
+  }
+  .properties-card-des h3 {
+    color: #222933;
+    font-size: 20px;
+    width: 350px;
+    font-family: 'Cinzel';
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflow text */
+    text-overflow: ellipsis; /* Display ellipsis (...) for overflow text */
+  }
+  .properties-card-des h6{
+    font-family: 'League Spartan';
+    font-size: 18px;
+    font-weight: 400;
+    color: #364250;
+    margin-bottom: 10px;
+  }
+  .card-des img{
+    width: 22px;
+  }
+  .card-des span{
+    font-family: 'League Spartan';
+    font-size: 16px;
+    color: #797979;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  sup{
+    font-size: 12px;
+    margin-left: -5px;
+    margin-bottom: 5px;
+  }
+
+  .properties-slide {
+    width: auto !important; /* Make sure slides only take up the necessary width */
+  }
+  /* .property-card .swiper-button-next:after,.property-card .swiper-rtl .swiper-button-prev:after{
+    content: url(/arrow-right-p.svg) !important;
+  }
+  .property-card .swiper-button-prev:after,  .property-card .swiper-rtl .swiper-button-next:after{
+    content: url(/arrow-left-p.svg) !important;
+  } */
+  .swiper-pagination-bullet:nth-child(n+4) {
+    display: none;
+  }
+  .swiper-pagination-bullet-active{
+    background: white !important;
+  }

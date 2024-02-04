@@ -163,6 +163,7 @@ section.card-sec-home {
 /*slider*/
 .slider-container-home{
     margin-bottom: 100px;
+    padding: 120px 0;
 }
 .slider-title-home-con {
     display: flex;

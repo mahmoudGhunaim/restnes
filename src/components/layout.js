@@ -36,25 +36,25 @@ const Layout = ({ children }) => {
         <footer className="footer">
           <div className="footer-container">
             <div className="sec-footer-logo">
-              <img src="Restnest.svg"/>
-              <Link to="/Services"><img src="map-marked-alt-solid 1.svg"/>3635 Carrington Rd West<br/> Kelowna, BC</Link>
-              <Link to="/Services"><img src="phone-solid 1.svg"/>7788584942</Link>
-              <Link to="/Services"><img src="envelope-open-text-solid 1.svg"/>info@restnest.ca</Link>
+              <img src="/Restnest.svg"/>
+              <Link to="/Services"><img src="/map-marked-alt-solid 1.svg"/>3635 Carrington Rd West<br/> Kelowna, BC</Link>
+              <Link to="/Services"><img src="/phone-solid 1.svg"/>7788584942</Link>
+              <Link to="/Services"><img src="/envelope-open-text-solid 1.svg"/>info@restnest.ca</Link>
             </div>
             <div className="sec-footer">
-              <Link to="/Services">Home</Link>
-              <Link to='/Clients'>Blog</Link>
-              <Link to="/About">Properties</Link>
+              <Link to="../">Home</Link>
+              <Link to='/BLOG'>Blog</Link>
+              <Link to="/Properties">Properties</Link>
             </div>
             <div className="sec-footer">
               <Link to='/ContactUs' >Contact Us</Link>
-              <Link to='/ContactUs' >Our Story</Link>
+              <Link to='/AboutUs' >Our Story</Link>
               <Link to='/ContactUs' >Rental Agreement</Link>
             </div>
             <div className="sec-footer">
               <Link to='/ContactUs' >Good Neighbor</Link>
               <Link to='/ContactUs' >Policies</Link>
-              <Link to='/Projects'>FAQ</Link>
+              <Link to='/FAQ'>FAQ</Link>
             </div>            
           </div>
         </footer>

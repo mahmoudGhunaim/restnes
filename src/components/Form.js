@@ -3,6 +3,10 @@ import * as easepick from '@easepick/bundle';
 import "./style/Form.css"
 import "./SearchForm"
 import SearchForm from './SearchForm';
+// import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
+// import { LocalizationProvider } from '@mui/x-date-pickers-pro';
+// import { AdapterDayjs } from '@mui/x-date-pickers-pro/AdapterDayjs';
+
 
 const Form = () => {
   useEffect(() => {
@@ -103,7 +107,6 @@ const Form = () => {
               required
             />
           </div>
-
           <div className="form-field">
             <h3>Guests</h3>
             <select name="num_adults" id="num_adults"  defaultValue="2">
