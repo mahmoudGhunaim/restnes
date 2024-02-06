@@ -62,6 +62,7 @@ button.view-all-photos{
     display: flex;
     justify-content: space-between;
     width: 90%;
+    gap: 100px;
   }
    .detail-pro-des h1{
     font-size: 32px;

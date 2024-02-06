@@ -319,3 +319,86 @@ path{
     font-family: 'League Spartan';
     line-height: 25px;
 }
+.mobile-img-process{
+    display: none;
+}
+@media screen and (max-width: 1024px) {
+    .Features-cards{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .hero-content-Management h1{
+        font-size: 38px;
+        width: 100%;
+        text-align: left;
+    }
+    .hero-content-Management span{
+        font-size: 38px;
+    }
+    .hero-content-Management p{
+        width: 100%;
+        text-align: left;
+    }
+    .hero-content-Management button{
+        font-size: 15px;
+        padding: 16px 7px;
+    }
+    .Service-Description-des h1{
+        font-size: 30px;
+        width: 100%;
+    }
+    .Service-Description-contanier{
+        flex-direction: column;
+    }
+    .Service-Description-img img{
+        width: 95vw;
+    }
+    .Features-title h1{
+        font-size: 30px;
+        width: 100%;
+    }
+    .We-hear-you-container{
+        flex-direction: column;
+    }
+    .We-hear-you-img img{
+        width: 95vw;
+    }
+    .We-hear-you-title .MuiAccordionSummary-content.MuiAccordionSummary-contentGutters.css-o4b71y-MuiAccordionSummary-content{
+        font-size: 16px;
+    }
+    .our-solution-content h1{
+        font-size: 30px;
+        width: 100%;
+    }
+    .The-Process-container{
+        flex-direction: column;
+        gap: 40px;
+    }
+   
+    .The-Process-title h1{
+        font-size: 24px;
+        width: 100%;
+    }
+    .Qualification-content h1{
+        width: 90%;
+        font-size: 24px;
+    }
+    .Qualification-sec-items{
+        width: 90%;
+    }
+    .The-Process-title p{
+        width: 90%;
+    }
+    
+    
+}
+@media screen and (max-width: 767px) {
+    .Features-cards{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .The-Process-img img{
+        display: none;
+    }
+    .mobile-img-process{
+        display: block !important;
+    }
+}

@@ -25,7 +25,7 @@ const IndexPage = () => (
           <p>
             Treat yourself to the perfect getaway with our selection of British Columbia’s most exquisite short-term rental properties in Kelowna, Whistler, and Vancouver.
           </p>
-          <button>Explore all properties</button>
+          <Link to='/Properties'><button>Explore all properties</button></Link>
           </div>
         </div>
       </div>

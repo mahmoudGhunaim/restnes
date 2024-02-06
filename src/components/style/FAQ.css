@@ -128,3 +128,33 @@ div#panel1-faq,div#panel2-faq,div#panel3-faq{
     font-size: 24px;
     font-family: 'Cinzel';
 }
+@media screen and (max-width: 1024px){
+    .Service-Description-container1{
+        flex-direction: column;
+        gap: 40px;
+    }
+    .Service-Description-img1 img{
+        width: 95vw;
+    }
+    .Service-Description-title1 p{
+        width: 100%;
+    }
+    .Service-Description-title1{
+        display: flex;
+        flex-direction: column;
+    align-items: center;
+    }
+    .Service-Description-title1 h1{
+        font-size: 30px;
+    }
+    .guest-faq-title h1,.property-owner-faq-title h1{
+        font-size: 30px;
+        text-align: center;
+    }
+    .guest-faq-container,.property-owner-faq-container{
+        width: 90%;
+    }
+    .guest-faq-acc .MuiAccordionSummary-content.MuiAccordionSummary-contentGutters.css-o4b71y-MuiAccordionSummary-content,.MuiAccordionSummary-content.MuiAccordionSummary-contentGutters.css-o4b71y-MuiAccordionSummary-content{
+        font-size: 18px;
+    }
+}

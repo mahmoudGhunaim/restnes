@@ -7,6 +7,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
 import { Link } from "gatsby"
 const Properties = () => {
   const [listings, setListings] = useState([]);
@@ -55,6 +57,12 @@ const Properties = () => {
   // Display the returned listings
   if (error) {
     return <p>Error: {error}</p>;
+  }  if (listings.length === 0) {
+    return (
+      <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+        <CircularProgress />
+      </Box>
+    );
   }
   const firstListing = listings.length > 0 ? listings[0] : null;
   

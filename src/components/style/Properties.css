@@ -17,12 +17,12 @@
   /* CSS for individual property cards */
   .property-card {
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    max-width: 360px;
+    max-width: 20vw;
   }
   
   /* Additional styling for images, headings, and property details */
   .property-card img {
-    width: 360px; /* Ensure images fit within their containers */
+    width: 20vw; /* Ensure images fit within their containers */
     max-height: 203px;
   }
   
@@ -44,7 +44,7 @@
   .properties-card-des h3 {
     color: #222933;
     font-size: 20px;
-    width: 350px;
+    width: 19vw;
     font-family: 'Cinzel';
     white-space: nowrap; /* Prevent text from wrapping */
     overflow: hidden; /* Hide overflow text */
@@ -88,4 +88,44 @@
   }
   .swiper-pagination-bullet-active{
     background: white !important;
+  }
+  @media screen and (max-width: 1024px){
+    .properties-container{
+      grid-template-columns:repeat(2,1fr);
+      justify-items: center;
+    }
+    .property-card{
+      max-width: 300px;
+    }
+    .property-card img{
+      width: 300px;
+      height: 183px;
+    }
+    .card-des img{
+      width: 22px;
+      height: 22px;
+    }
+    .form-property{
+      margin-top: 25px;
+    }
+  }
+  @media screen and (max-width: 767px){
+    .properties-container{
+      grid-template-columns:repeat(1,1fr);
+      justify-items: center;
+    }
+    .property-card{
+      max-width: 300px;
+    }
+    .property-card img{
+      width: 300px;
+      height: 183px;
+    }
+    .card-des img{
+      width: 22px;
+      height: 22px;
+    }
+    .form-property{
+      margin-top: 25px;
+    }
   }

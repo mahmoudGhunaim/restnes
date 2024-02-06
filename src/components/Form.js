@@ -91,11 +91,7 @@ const Form = () => {
               required
             />
           </div>
-          <div className="DateRangePickerInput_arrow DateRangePickerInput_arrow_1" aria-hidden="true" role="presentation">
-            <svg className="DateRangePickerInput_arrow_svg DateRangePickerInput_arrow_svg_1" focusable="false" viewBox="0 0 1000 1000">
-              {/* SVG path data */}
-            </svg>
-          </div>
+          
           <div className="form-field DateInput DateInput_1">
           <h3>Check out</h3>
             <input

@@ -153,6 +153,7 @@ const Management = () => {
                 </div>
                 <div className='The-Process-img'>
                     <img src='/Frame 48096227.svg'/>
+                    <img src='/Frame 48096225 111.svg' className='mobile-img-process'/>
                 </div>
             </div>
         </section>

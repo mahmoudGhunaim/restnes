@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'League Spartan';
     src: local('League Spartan'), url('../../../Fonts/League_Spartan/LeagueSpartan-VariableFont_wght.ttf') format('woff2');
-    font-weight: normal;
+    font-weight: 3  00;
     font-style: normal;
   }
   @font-face {
@@ -12,6 +12,9 @@
   }
 *{
     margin: 0;
+}
+button{
+    cursor: pointer;
 }
 body{
     background: rgba(248, 248, 248, 1);
@@ -185,3 +188,87 @@ section.card-sec-home {
 .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after{
     content: url('/arrow-left.svg') !important;
 }
+
+@media screen and (max-width: 1024px){
+    .Home-Head-container{
+        flex-direction: column;
+        gap: 40px;
+    }
+    .Home-left-sec h1{
+        font-size: 38px;
+        width: 60%;
+    }
+    .Home-left-sec span{
+        font-size: 38px;
+    }
+    .Home-right-sec{
+        width: 100%;
+    }
+    .Home-right-sec p{
+        width: 60%;
+    }
+    .lmpm-search-fields.DateRangePickerInput.DateRangePickerInput_1,.slider-container{
+        flex-direction: column;
+    }
+    .card-content-home{
+        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+}
+.slider-title-home h1{
+    width: 100%;
+    font-size: 30px;
+}
+}
+@media screen and (max-width: 767px) {
+    .Home-Head-container{
+        flex-direction: column;
+        gap: 40px;
+    }
+    .Home-left-sec h1{
+        font-size: 38px;
+        width: 100%;
+    }
+    .Home-left-sec span{
+        font-size: 38px;
+    }
+    .Home-right-sec{
+        width: 100%;
+    }
+    .Home-right-sec p{
+        width: 100%;
+    }
+    .lmpm-search-fields.DateRangePickerInput.DateRangePickerInput_1{
+        flex-direction: column;
+    }
+    .form-container{
+        width: 100%;
+    }
+    .description-home-container{
+        width: 90%;
+    }
+    .description-home-title h1{
+        font-size: 30px;
+    }
+    .description-home-line{
+        width: 250px;
+    }
+    .card-content-home{
+        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+}
+.cards-home p{
+    width: 100%;
+}
+.cards-home h1{
+    width: 100%;
+}
+.slider-title-home h1{
+    font-size: 30px;
+    width: 100%;
+}
+.slider-container{
+    flex-direction: column;
+}
+.slider-img img{
+    width: 90%;
+}
+    
+  }

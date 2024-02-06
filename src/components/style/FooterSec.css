@@ -32,3 +32,16 @@
     align-items: center;
     
 }
+@media screen and (max-width: 1024px){
+    .FooterSec-sec{
+         background-position: bottom;
+         background-repeat: no-repeat;
+    }
+    .FooterSec-content h1{
+        font-size: 30px;
+        text-align: center;
+    }
+    .FooterSec-content h2{
+        font-size: 30px;
+    }
+}

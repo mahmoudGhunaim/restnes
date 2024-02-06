@@ -1,6 +1,7 @@
 // src/components/SearchForm.js
 import React, { useState } from 'react';
 import { getProperties } from '../services/hostaway';
+import { Link } from "gatsby"
 
 const SearchForm = () => {
   const [checkInDate, setCheckInDate] = useState('');
@@ -22,7 +23,7 @@ const SearchForm = () => {
   return (
     <div>
       <div className="button-container">
-          <button type="submit"><img src='/search-normal.svg'/></button>
+         <Link to='/Properties'> <button type="submit"><img src='/search-normal.svg'/></button></Link>
         </div>
       {/* Bind the input values to your state and on submit call handleSearch */}
     </div>

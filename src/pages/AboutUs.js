@@ -1,6 +1,7 @@
 import React from 'react'
 import "../components/style/AboutUs.css"
 import Layout from "../components/layout"
+import { Link } from "gatsby"
 const AboutUs = () => {
   return (
     <Layout>
@@ -10,7 +11,7 @@ const AboutUs = () => {
                     <h1>Where Luxury Meets Exceptional Care</h1>
                     <span>RestNest</span>
                     <p>Welcome to RestNest, the name synonymous with luxury vacation home management across the picturesque landscapes of Kelowna, Whistler, and Vancouver. We're in the business of creating exceptional experiences — for both homeowners and guests.</p>
-                    <button>Explore all properties</button>
+                    <Link to='/Properties'><button>Explore all properties</button></Link>
                 </div>
             </div>
         </section>
@@ -71,7 +72,7 @@ const AboutUs = () => {
                     <h3>British Columbia</h3>
                     <p>What truly sets RestNest apart is our unwavering commitment to excellence and personalized service. Our teams across Kelowna, Whistler, and Vancouver are not just experts in luxury property management; they're ambassadors of the exquisite local lifestyle, dedicated to offering authentic experiences.</p>
                     <p>Whether you're a homeowner seeking to simplify the management of your luxury property or a guest looking for your next extraordinary getaway, RestNest promises a standard of service that is unmatched in the industry.</p>
-                    <button>Discover Luxury with RestNest</button>
+                    <Link to='/Properties'><button>Discover Luxury with RestNest</button></Link>
                 </div>
             </div>
         </section>

@@ -33,3 +33,11 @@
     line-height: 30px;
     color: #222933;
 }
+@media screen and (max-width: 767px){
+    .blog-des-content h1{
+        font-size: 30px;
+    }
+    .blog-des-content p{
+        width: 100%;
+    }
+}

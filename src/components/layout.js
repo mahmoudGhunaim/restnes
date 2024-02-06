@@ -49,11 +49,11 @@ const Layout = ({ children }) => {
             <div className="sec-footer">
               <Link to='/ContactUs' >Contact Us</Link>
               <Link to='/AboutUs' >Our Story</Link>
-              <Link to='/ContactUs' >Rental Agreement</Link>
+              <Link to='/RentalAgreement' >Rental Agreement</Link>
             </div>
             <div className="sec-footer">
-              <Link to='/ContactUs' >Good Neighbor</Link>
-              <Link to='/ContactUs' >Policies</Link>
+              <Link to='/GoodNeighbor' >Good Neighbor</Link>
+              <Link to='/PrivacyPolicy' >Policies</Link>
               <Link to='/FAQ'>FAQ</Link>
             </div>            
           </div>

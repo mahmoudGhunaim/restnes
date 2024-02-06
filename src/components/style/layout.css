@@ -59,7 +59,7 @@ body{
   gap: 40px;
   margin-top: 80px;
 }
-.sec-footer a{
+.sec-footer a ,.navBar-hamburger a{
   font-size: 18px;
   font-family: 'Cinzel', serif;
   text-decoration: none;
@@ -84,4 +84,95 @@ body{
   align-items: center;
   gap: 20px;
   line-height: 25px;
+}
+.mobile-menu{
+  display: none;
+}
+button.btn.btn-danger {
+  background: none;
+  border: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .mobile-menu{
+    display: inline;
+  }
+  .link-family,.login-sec{
+    display: none;
+  }
+  .footer-container{
+    flex-direction: column;
+  }
+  
+  .sec-footer{
+    margin-top: 30px;
+  }
+  .sec-footer:nth-child(1){
+    margin-top: 40px !important;
+  }
+  .navBar-hamburger{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+  .modal-content {
+    position: fixed; /* Changed from absolute to fixed to ensure it's positioned relative to the viewport */
+    left: 0; /* Align to the left edge of the viewport */
+    top: 0; /* Align to the top edge of the viewport */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    line-height: 1.4;
+    background: rgba(34, 41, 51, 1);
+    padding: 0;
+    border-radius: 3px;
+    transform: translate(0, 0); /* Updated to ensure it doesn't move from top left corner */
+}
+button.btn-close{
+  background: none;
+  border: none;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+button.btn-close::before{
+  content: url(/xIcon.svg) !important;
+
+}
+button.btn.btn-primary{
+  width: 90%;
+  
+}
+.modal-footer {
+  display: flex;
+  justify-content: center;
+}
+.logo-sec-mob{
+ 
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 30px;
+
+}
+.login-mob{
+  width: 80%;
+  margin-top: 40px;
+  background: rgba(172, 149, 118, 1);
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+.login-mob a{
+  color: rgba(255, 255, 255, 1);
+  text-decoration: none ;
+  font-size: 18px;
+  font-family: 'Cinzel', serif;
+  font-weight: 400;
+  text-align: center;
+}
+.header-sec{
+  padding-top: 20px;
+}
+.sec-footer{
+  gap: 30px;
+}
 }

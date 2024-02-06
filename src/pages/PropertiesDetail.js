@@ -3,6 +3,8 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import "../components/style/PropertiesDetail.css";
 import Layout from "../components/layout";
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
 
 import { Map, Circle, GoogleApiWrapper, InfoWindow } from 'google-maps-react';
 const mapStyles = {
@@ -66,6 +68,8 @@ const PropertiesDetail = (props) => {
     const formattedStartDate = formatDate(startDate);
     const formattedEndDate = formatDate(endDate);
     const nights = calculateNumberOfNights(startDate, endDate);
+    const currentDate = new Date();
+    currentDate.setHours(0, 0, 0, 0);
     const queryParamsId = new URLSearchParams(window.location.search);
   const bookingId=queryParamsId.get('listingMapId');
     const url = `https://58620_1.holidayfuture.com/checkout/${bookingId}?start=${formattedStartDate}&end=${formattedEndDate}&numberOfGuests=${guests}&nights=${nights}`;
@@ -228,7 +232,9 @@ fetchData();
   }
 
   if (!listings) {
-    return <div>Loading...</div>;
+    return   <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh'}}>
+              <CircularProgress />
+            </Box>;
   }
 
 
@@ -236,6 +242,7 @@ fetchData();
   const listingImages = firstListing.listingImages ? firstListing.listingImages.slice(0) : [];
   const firstImage = listingImages.length > 0 ? listingImages[0] : null;
   console.log(148,firstListing.listingAmenities);
+ const currentDate = new Date(new Date().setHours(0, 0, 0, 0));
   return (
     <Layout>
       <section className='image-sec-det'>
@@ -336,14 +343,16 @@ fetchData();
             <label htmlFor="checkIn">Check In</label>
             <DatePicker
   selected={startDate}
-  onChange={(date) => {
-    setStartDate(date);
-    handleDateChange(date, endDate); // Adjust to call handleDateChange
-  }}
-  dateFormat="yyyy-MM-dd"
-  id="checkIn"
-  className="form-control"
-  placeholderText="Select Check-In Date"
+  
+        onChange={(date) => {
+          setStartDate(date);
+                  handleDateChange(date, endDate);// Adjust to call handleDateChange
+        }}
+        dateFormat="yyyy-MM-dd"
+        id="checkIn"
+        className="form-control"
+        placeholderText="Select Check-In Date"
+        minDate={currentDate}
 />
           </div>
           <div className="form-group">
@@ -358,6 +367,7 @@ fetchData();
   id="checkOut"
   className="form-control"
   placeholderText="Select Check-Out Date"
+  minDate={startDate || currentDate}
 />
           </div>
           </div>
@@ -393,6 +403,7 @@ fetchData();
               <p>Total before taxes</p>
               <p>${firstListing.cleaningFee + firstListing.price * nights}</p>
             </div>
+            <p>{firstListing.Tax}</p>
           </div>
            </div>
         </div>
