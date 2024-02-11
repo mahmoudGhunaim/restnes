@@ -300,6 +300,27 @@ button.btn.btn-primary{
     gap: 5px;
     align-items: center;
 }
+.checkout-mobile-sec{
+    display: none;
+}
+.check-in-out-mob{
+    border:1px solid rgba(200, 200, 202, 1) ;
+    padding: 0px 10px 0 10px;
+}
+/* .check-in-out-mob-container{
+    display: flex;
+
+} */
+.in-mobile-space{
+    margin-bottom: 20px;
+}
+.form-group-mobile{
+    border-radius: 10px 10px 0 0;
+}
+button.react-datepicker__close-icon{
+    display: none;
+}
+
 @media screen and (max-width: 1024px){
     .image-list-inner{
         display: inline;
@@ -333,9 +354,26 @@ button.btn.btn-primary{
     .amenity-detail{
         grid-template-columns: repeat(2, 1fr);
     }
+    .check-in-out-mob button{
+        width: 100% !important;
+    }
 }
 @media screen and (max-width: 767px){
+    .checkout-mobile-sec {
+        background: #fff;
+        display: inline;
+        position: fixed; 
+        bottom: 0;      
+        left: 0;        
+        width: 100%;    
+        z-index: 1000;   
+     
+      }
+      
     .amenity-detail{
         grid-template-columns: repeat(1, 1fr);
+    }
+    .check-in-out-mob button{
+        width: 100% !important;
     }
 }

@@ -138,10 +138,7 @@ button.btn-close::before{
   content: url(/xIcon.svg) !important;
 
 }
-button.btn.btn-primary{
-  width: 90%;
-  
-}
+
 .modal-footer {
   display: flex;
   justify-content: center;
@@ -174,5 +171,8 @@ button.btn.btn-primary{
 }
 .sec-footer{
   gap: 30px;
+}
+.check-in-out-mob button{
+  width: 100% !important;
 }
 }
