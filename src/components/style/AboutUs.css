@@ -273,11 +273,9 @@ justify-content: center;
     .dual-commitment-img img{
         width: 100vw;
     }
-    .Meet-Our-Team-contaner{
-        flex-direction: column;
-    }
+   
     .Meet-Our-Team-img img{
-        width: 100%;
+        width: 300px;
     }
     .Meet-Our-Team-img h3{
         margin-bottom: -20px;
@@ -302,5 +300,13 @@ justify-content: center;
     }
     .footer-des-about button{
         font-size: 16px;
+    }
+ }
+ @media screen and (max-width: 720px){
+    .Meet-Our-Team-img img {
+        width: 100%;
+    }
+    .Meet-Our-Team-contaner{
+        flex-direction: column;
     }
  }

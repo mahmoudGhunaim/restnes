@@ -8,7 +8,7 @@ const CustmerSay = ({imgSrc,des,location,Name}) => {
                 <img src={imgSrc}/>
             </div>
             <div className='slider-right'>
-                <img src='”.svg'/>
+                <img src='quat.svg'/>
                 <p className='des'>{des}</p>
                 <h3>{Name}</h3>
                 <p className='location'>{location}</p>

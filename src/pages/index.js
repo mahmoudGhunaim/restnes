@@ -9,7 +9,7 @@ import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import CustmerSay from "../components/CustmerSay"
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide,useSwiper } from 'swiper/react';
 import FooterSec from '../components/FooterSec';
 
 const IndexPage = () => (
@@ -79,6 +79,7 @@ const IndexPage = () => (
       <div className="slider-container-home">
         <div className="slider-title-home-con">
         <div className="slider-title-home">
+       
           <h1 >Don't just take our word for it—read what our guests have to say!</h1>
         </div>
         </div>
@@ -105,40 +106,41 @@ const IndexPage = () => (
               modules={[Navigation, Pagination, Scrollbar, A11y]}
               spaceBetween={0}
               // slidesPerView={4}
-              navigation
+              // navigation
               direction="horizontal"
               // pagination={{ clickable: true }}
               scrollbar={{ draggable: true }}
               onSwiper={(swiper) => console.log(swiper)}
               onSlideChange={() => console.log('slide change')}
               >
+                 <SliderButtons/>
               <div className="clients-slider">
                   <SwiperSlide><CustmerSay
-                  imgSrc="3 (1) 2.svg"
+                  imgSrc="3 (1) 2.jpg"
                   des="Staying at this luxury rental property was a dream come true!  Every detail was carefully curated to perfection, making our stay an unforgettable retreat into luxury. A heartfelt thanks for turning our getaway into an extraordinary memory. Can't wait to return and relive the magic!" 
                   Name="Diana Rachel"
                   location="Entire condo in Banff, Canada"
                   /></SwiperSlide>
                   <SwiperSlide><CustmerSay
-                  imgSrc="3 (1) 2.svg"
+                  imgSrc="3 (1) 2.jpg"
                   des="Staying at this luxury rental property was a dream come true!  Every detail was carefully curated to perfection, making our stay an unforgettable retreat into luxury. A heartfelt thanks for turning our getaway into an extraordinary memory. Can't wait to return and relive the magic!" 
                   Name="Diana Rachel"
                   location="Entire condo in Banff, Canada"
                   /></SwiperSlide>
                   <SwiperSlide><CustmerSay
-                  imgSrc="3 (1) 2.svg"
+                  imgSrc="3 (1) 2.jpg"
                   des="Staying at this luxury rental property was a dream come true!  Every detail was carefully curated to perfection, making our stay an unforgettable retreat into luxury. A heartfelt thanks for turning our getaway into an extraordinary memory. Can't wait to return and relive the magic!" 
                   Name="Diana Rachel"
                   location="Entire condo in Banff, Canada"
                   /></SwiperSlide>
                   <SwiperSlide><CustmerSay
-                  imgSrc="3 (1) 2.svg"
+                  imgSrc="3 (1) 2.jpg "
                   des="Staying at this luxury rental property was a dream come true!  Every detail was carefully curated to perfection, making our stay an unforgettable retreat into luxury. A heartfelt thanks for turning our getaway into an extraordinary memory. Can't wait to return and relive the magic!" 
                   Name="Diana Rachel"
                   location="Entire condo in Banff, Canada"
                   /></SwiperSlide>
                   <SwiperSlide><CustmerSay
-                  imgSrc="3 (1) 2.svg"
+                 imgSrc="3 (1) 2.jpg"
                   des="Staying at this luxury rental property was a dream come true!  Every detail was carefully curated to perfection, making our stay an unforgettable retreat into luxury. A heartfelt thanks for turning our getaway into an extraordinary memory. Can't wait to return and relive the magic!" 
                   Name="Diana Rachel"
                   location="Entire condo in Banff, Canada"
@@ -156,3 +158,12 @@ const IndexPage = () => (
 
 
 export default IndexPage
+const SliderButtons = ()=> {
+  const swiper = useSwiper();
+  return(
+      <div className="r-button flexCenter">
+          <button onClick={()=> swiper.slidePrev()} className='slider-btn'><img src='/arrow-left.svg' /></button>
+          <button onClick={()=> swiper.slideNext()} className='slider-btn'><img src='/arrow-right.svg'/></button>
+      </div>
+  )
+}

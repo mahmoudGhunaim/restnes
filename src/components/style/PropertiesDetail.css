@@ -41,7 +41,7 @@ button.view-all-photos{
 }
 .small-image-d img{
     width: 20vw;
-    height: auto;
+    height: 13vw;
   
 }
 /* Add this CSS to PropertiesDetail.css */
@@ -266,17 +266,76 @@ button.btn.btn-primary{
 .desc-booking-detail:nth-child(3){
     margin-top: 20px;
 }
+.desc-booking-detail:nth-child(4){
+    margin-top: 20px;
+}
+.desc-booking-detail:nth-child(5){
+    margin-top: 20px;
+}
 .desc-booking-detail{
     display: flex;
     justify-content: space-between;
 }
-.desc-booking-detail p{
+.desc-booking-detail p,.night-booking-tilte{
     font-family: 'League Spartan';
     font-size: 17px;
     color: rgba(34, 41, 51, 1);
 }
-.desc-booking-detail:nth-child(3) p{
+.desc-booking-detail:nth-child(6) p,.reservation{
     font-size: 18px;
     font-weight: 400;
     color: rgba(34, 41, 51, 1);
+}
+.desc-booking-detail:nth-child(6){
+    margin-top: 20px;
+}
+.inner-details{
+    margin-top: 30px;
+}
+.amenity-detail-single path{
+    color: #364250;
+}
+.amenity-detail-single{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+@media screen and (max-width: 1024px){
+    .image-list-inner{
+        display: inline;
+    }
+    .small-image-d{
+        display: none;
+    }
+    .Big-image-d img{
+        max-width: none !important;
+        width: 110%;
+        margin-bottom: -60px;
+    }
+    button.view-all-photos{
+        margin-left: 15px;
+    }
+    .Big-image-d {
+        width: 90%;
+    }
+    .pay-detail{
+        display: none;
+    }
+    .detail-pro-sec{
+        width: 100%;
+    }
+    .image-sec-det {
+        padding: 70px 0;
+    }
+    .detail-pro-des h1{
+        font-size: 30px;
+    }
+    .amenity-detail{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (max-width: 767px){
+    .amenity-detail{
+        grid-template-columns: repeat(1, 1fr);
+    }
 }

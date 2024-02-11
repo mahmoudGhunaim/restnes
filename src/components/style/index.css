@@ -167,11 +167,13 @@ section.card-sec-home {
 .slider-container-home{
     margin-bottom: 100px;
     padding: 120px 0;
+    max-width: max-content;
 }
+
 .slider-title-home-con {
     display: flex;
     justify-content: center;
-    margin-bottom: 70px;
+    margin-bottom: -70px;
 
 }
 .slider-title-home{
@@ -188,7 +190,33 @@ section.card-sec-home {
 .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after{
     content: url('/arrow-left.svg') !important;
 }
-
+/* .r-button {
+    position: absolute;
+    gap: 1rem;
+    top: -4rem;
+    right: 0;
+}
+.swiper-horizontal{
+    overflow: visible !important;
+}*/
+.swiper.swiper-initialized.swiper-horizontal.swiper-backface-hidden{
+    display: flex;
+    flex-direction: column-reverse;
+}
+.slider-btn{
+    background: none;
+    border: none;
+}
+.flexCenter {
+    display: flex;
+    row-gap: 2rem;
+    justify-content: right;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 80px;
+    margin-right: 50px;
+    width: 95%;
+} 
 @media screen and (max-width: 1024px){
     .Home-Head-container{
         flex-direction: column;
@@ -217,8 +245,20 @@ section.card-sec-home {
     width: 100%;
     font-size: 30px;
 }
+.slider-title-home-con{
+    margin-bottom: -20px;
+}
+.flexCenter{
+    margin-bottom: 50px;
+}
 }
 @media screen and (max-width: 767px) {
+    .slider-title-home-con {
+        margin-bottom: -10px;
+    }
+    .flexCenter{
+        margin-bottom: 30px;
+    }
     .Home-Head-container{
         flex-direction: column;
         gap: 40px;

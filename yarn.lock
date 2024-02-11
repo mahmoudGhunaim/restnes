@@ -1149,7 +1149,7 @@
   dependencies:
     "@easepick/base-plugin" "^1.1.0"
 
-"@easepick/base-plugin@^1.1.0":
+"@easepick/base-plugin@^1.1.0", "@easepick/base-plugin@^1.2.0":
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@easepick/base-plugin/-/base-plugin-1.2.1.tgz#1c8fc783d2e853c15cabd31bd60dfc15794a0e90"
   integrity sha512-aonBQaRyZwNH/gmPzSzZDVjQjgy/rxWd+TXnM0E3Nxkeu4yMbXV+GnWVQbBwTvJx74M7iSCHJowdmZ5T46B7Vg==
@@ -1171,14 +1171,14 @@
     "@easepick/range-plugin" "^1.1.0"
     "@easepick/time-plugin" "^1.1.0"
 
-"@easepick/core@^1.1.0", "@easepick/core@^1.2.1":
+"@easepick/core@^1.1.0", "@easepick/core@^1.2.0", "@easepick/core@^1.2.1":
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@easepick/core/-/core-1.2.1.tgz#f7b23ee89129a4bc38968015d4300f79b5bd3eda"
   integrity sha512-V/blEia/ykAq+0mnQ9djOU5wvMZ+iffL5iuQrKLObpMOw38kL/qo4inH4pCbB3wm7sDjrJTuDKf+6+FrgdFGsw==
   dependencies:
     "@easepick/datetime" "^1.1.0"
 
-"@easepick/datetime@^1.1.0", "@easepick/datetime@^1.2.1":
+"@easepick/datetime@^1.1.0", "@easepick/datetime@^1.2.0", "@easepick/datetime@^1.2.1":
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@easepick/datetime/-/datetime-1.2.1.tgz#cefa39b7f18bb13bed5cb217b774eb21c279e564"
   integrity sha512-KIUvWo/kEipwBqPTazjfUf6R7dKb2ztPizPoB/0ZMYz3HrWJptsLSZQma3R1nM/zkaexnk/e4L4nX+vDjwBtYA==
@@ -1190,14 +1190,14 @@
   dependencies:
     "@easepick/base-plugin" "^1.1.0"
 
-"@easepick/lock-plugin@^1.1.0", "@easepick/lock-plugin@^1.2.1":
+"@easepick/lock-plugin@^1.1.0", "@easepick/lock-plugin@^1.2.0", "@easepick/lock-plugin@^1.2.1":
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@easepick/lock-plugin/-/lock-plugin-1.2.1.tgz#b3713ef9932434b2777d4238ad11d7f92e9fe637"
   integrity sha512-6sJCdliMpnQtzL9dwznS9vYaQUy66VRKPZ+jFdVR1ohiNUVM6C7dSGdG3dPntVTywTy2Z9uU+yJOeWcVFDT61A==
   dependencies:
     "@easepick/base-plugin" "^1.1.0"
 
-"@easepick/preset-plugin@^1.1.0":
+"@easepick/preset-plugin@^1.1.0", "@easepick/preset-plugin@^1.2.0":
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@easepick/preset-plugin/-/preset-plugin-1.2.1.tgz#a909c973b61f492ef7672e3926aa9fab784f0545"
   integrity sha512-VAnjyWpf39kXTR6DYbpCJIBeBhbOgRoNTqntpSb5uF9O398KuHUpIM4Ep1id3fTIlfnRrKxzp54rAFwvc48eCA==
@@ -1205,14 +1205,14 @@
     "@easepick/base-plugin" "^1.1.0"
     "@easepick/range-plugin" "^1.1.0"
 
-"@easepick/range-plugin@^1.1.0":
+"@easepick/range-plugin@^1.1.0", "@easepick/range-plugin@^1.2.0":
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@easepick/range-plugin/-/range-plugin-1.2.1.tgz#188280ccb63377e4a2c001265497c62e39d20e7c"
   integrity sha512-yEHLUq32Kj0exLz4txxchALQVJUbwyXvnovfN7yxTrCJLpi6uMmPXcW4lyYig2P9+xM9JqF6JsNqOsi0+5GlHQ==
   dependencies:
     "@easepick/base-plugin" "^1.1.0"
 
-"@easepick/time-plugin@^1.1.0":
+"@easepick/time-plugin@^1.1.0", "@easepick/time-plugin@^1.2.0":
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@easepick/time-plugin/-/time-plugin-1.2.1.tgz#3d8771c812991d828b9c247a1065244fa2d67893"
   integrity sha512-mjynAAppLxlqiDSdHdkBEqi4A67CH17FqO3UH2n6mfAIKPZLQA7R8Y6jEkp+Fpl5tj0/HFqdrk82ceiYYnLFYw==
@@ -1393,6 +1393,32 @@
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/@floating-ui/utils/-/utils-0.2.1.tgz#16308cea045f0fc777b6ff20a9f25474dd8293d2"
   integrity sha512-9TANp6GPoMtYzQdt54kfAyMmz1+osLlXdg2ENroU7zzrtflTLrrC/lgrIfaSe+Wu0b89GKccT7vxXA0MoAIO+Q==
+
+"@fortawesome/fontawesome-common-types@6.5.1":
+  version "6.5.1"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-6.5.1.tgz#fdb1ec4952b689f5f7aa0bffe46180bb35490032"
+  integrity sha512-GkWzv+L6d2bI5f/Vk6ikJ9xtl7dfXtoRu3YGE6nq0p/FFqA1ebMOAWg3XgRyb0I6LYyYkiAo+3/KrwuBp8xG7A==
+
+"@fortawesome/fontawesome-svg-core@^6.5.1":
+  version "6.5.1"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-6.5.1.tgz#9d56d46bddad78a7ebb2043a97957039fcebcf0a"
+  integrity sha512-MfRCYlQPXoLlpem+egxjfkEuP9UQswTrlCOsknus/NcMoblTH2g0jPrapbcIb04KGA7E2GZxbAccGZfWoYgsrQ==
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "6.5.1"
+
+"@fortawesome/free-solid-svg-icons@^6.5.1":
+  version "6.5.1"
+  resolved "https://registry.yarnpkg.com/@fortawesome/free-solid-svg-icons/-/free-solid-svg-icons-6.5.1.tgz#737b8d787debe88b400ab7528f47be333031274a"
+  integrity sha512-S1PPfU3mIJa59biTtXJz1oI0+KAXW6bkAb31XKhxdxtuXDiUIFsih4JR1v5BbxY7hVHsD1RKq+jRkVRaf773NQ==
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "6.5.1"
+
+"@fortawesome/react-fontawesome@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@fortawesome/react-fontawesome/-/react-fontawesome-0.2.0.tgz#d90dd8a9211830b4e3c08e94b63a0ba7291ddcf4"
+  integrity sha512-uHg75Rb/XORTtVt7OS9WoK8uM276Ufi7gCzshVWkUJbHhh3svsUUeqXerrM96Wm7fRiDzfKRwSoahhMIkGAYHw==
+  dependencies:
+    prop-types "^15.8.1"
 
 "@gatsbyjs/parcel-namer-relative-to-cwd@^2.13.1":
   version "2.13.1"
@@ -4249,6 +4275,14 @@ date-fns@^3.3.1:
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-3.3.1.tgz#7581daca0892d139736697717a168afbb908cfed"
   integrity sha512-y8e109LYGgoQDveiEBD3DYXKba1jWf5BA8YU1FL5Tvm0BTdEfy54WLCwnuYWZNnzzvALy/QQ4Hov+Q9RVRv+Zw==
 
+daterangepicker@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/daterangepicker/-/daterangepicker-3.1.0.tgz#718d606614331df3e774c9aba82ccd8838d45da1"
+  integrity sha512-DxWXvvPq4srWLCqFugqSV+6CBt/CvQ0dnpXhQ3gl0autcIDAruG1PuGG3gC7yPRNytAD1oU1AcUOzaYhOawhTw==
+  dependencies:
+    jquery ">=1.10"
+    moment "^2.9.0"
+
 debug@2, debug@2.6.9, debug@^2.6.0:
   version "2.6.9"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
@@ -4510,6 +4544,25 @@ duplexer@^0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/duplexer/-/duplexer-0.1.2.tgz#3abe43aef3835f8ae077d136ddce0f276b0400e6"
   integrity sha512-jtD6YG370ZCIi/9GTaJKQxWTZD045+4R4hTk/x1UyoqadyJ9x9CgSi1RlVDQF8U2sxLLSnFkCaMihqljHIWgMg==
+
+easepick-plugin-amp@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/easepick-plugin-amp/-/easepick-plugin-amp-0.0.2.tgz#65d5ad4c17df25a8a83f809d237ebdefebc26149"
+  integrity sha512-X3Uq4yrbS6BbHKotoN8lssm7uFDIvD6wTyfrmEO1gr//6GVHlbjLviyMZ07jE9Fjvwef3lemlymHdBt0m/41iQ==
+  dependencies:
+    "@easepick/base-plugin" "^1.2.0"
+
+easepick-plugin-keyboard@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/easepick-plugin-keyboard/-/easepick-plugin-keyboard-0.0.2.tgz#7057912f15dcd53b485bf771d6e7ea3fb00f0008"
+  integrity sha512-zQAMKptopYIdmF0YoKVC7YMwMesD7rI+5zMDVj3DjMCZEPIeih9zIp4+govBt9lIoMCli3rQoUGlKOQys101og==
+  dependencies:
+    "@easepick/base-plugin" "^1.2.0"
+
+easepick-react@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/easepick-react/-/easepick-react-1.0.1.tgz#0ab66b94d1001405b1c36518d66b189eb7c4fed9"
+  integrity sha512-BbSH5XLkN3X6GXVtBKI0o9LscfNOrGc6MP9b7SRXxXEBQCrkMBdi6fgVMi2lZ/9m5Ht+e22A//pGyoR0lWRxHA==
 
 ee-first@1.1.1:
   version "1.1.1"
@@ -6851,6 +6904,11 @@ joi@^17.9.2:
     "@sideway/formula" "^3.0.1"
     "@sideway/pinpoint" "^2.0.0"
 
+jquery@>=1.10:
+  version "3.7.1"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.7.1.tgz#083ef98927c9a6a74d05a6af02806566d16274de"
+  integrity sha512-m4avr8yL8kmFN8psrbFFFmB/If14iN5o9nw/NgnnM+kybDJpRsAynV2BsfpTYrTRysYUdADVD7CkUUizgkpLfg==
+
 "js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
@@ -7399,7 +7457,7 @@ mkdirp@^0.5.1, mkdirp@^0.5.4:
   dependencies:
     minimist "^1.2.6"
 
-moment@^2.29.4:
+moment@^2.29.4, moment@^2.9.0:
   version "2.30.1"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.30.1.tgz#f8c91c07b7a786e30c59926df530b4eac96974ae"
   integrity sha512-uEmtNhbDOrWPFS+hdjFCBfy9f2YoyzRpwcl+DqpC6taX21FzsTLQVbMV/W7PzNSX6x/bhC1zA3c2UQ5NzH6how==
@@ -8557,6 +8615,21 @@ react-dom@^18.2.0:
   dependencies:
     loose-envify "^1.1.0"
     scheduler "^0.23.0"
+
+react-easepick@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-easepick/-/react-easepick-1.0.0.tgz#246641c28d43418aaf23f5c6d4815aa13aa72118"
+  integrity sha512-VtURhDKrcBctp/gHKHoUJ6W6IKYO3pOhTC1GFwpzxC3Dc8y7/fYw85dm6fgJUs+CuwZ7s1SEvxkgPiP9cPXYlA==
+  dependencies:
+    "@easepick/core" "^1.2.0"
+    "@easepick/datetime" "^1.2.0"
+    "@easepick/lock-plugin" "^1.2.0"
+    "@easepick/preset-plugin" "^1.2.0"
+    "@easepick/range-plugin" "^1.2.0"
+    "@easepick/time-plugin" "^1.2.0"
+    easepick-plugin-amp "^0.0.2"
+    easepick-plugin-keyboard "^0.0.2"
+    easepick-react "^1.0.1"
 
 react-error-overlay@^6.0.11:
   version "6.0.11"

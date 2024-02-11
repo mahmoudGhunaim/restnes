@@ -74,3 +74,25 @@
     margin-top: 10px;
     margin-bottom: 30px;
 }
+@media screen and (max-width: 1024px) {
+    .RentalAgreement-container{
+        flex-direction: column;
+    }
+    .RentalAgreement-list{
+        width: 90%;
+    }
+    .RentalAgreement-data{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 767px) {
+    .RentalAgreement-container{
+        flex-direction: column;
+    }
+    .RentalAgreement-list{
+        width: 80%;
+    }
+    .RentalAgreement-data{
+        width: 100%;
+    }
+}

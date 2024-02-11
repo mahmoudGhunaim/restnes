@@ -7,6 +7,7 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Button from '@mui/material/Button';
+
 const Management = () => {
   return (
     <Layout>
@@ -83,21 +84,22 @@ const Management = () => {
                         <p>Comprehensive post-visit clean-ups guarantee your property is always in pristine condition, ready for you or your...</p>
                     </div>
                 </div>
-                <button>Load more features</button>
+                
             </div>
         </section>
         <section className='We-hear-you-sec'>
             <div className='We-hear-you-container'>
                 <div className='We-hear-you-img'>
-                    <img src='/Frame 480962155414554.svg'/>
+                    <img src='/Frame 480962155414554.jpg'/>
                 </div>
                 <div className='We-hear-you-title'>
                     <h3></h3>
-                    <Accordion>
+                    <Accordion defaultExpanded>
                         <AccordionSummary
-                        expandIcon={<ExpandMoreIcon />}
-                        aria-controls="panel1-content"
-                        id="panel1-header"
+                            expandIcon={<ExpandMoreIcon />}
+                            aria-controls="panel1-content"
+                            id="panel1-header"
+                            
                         >
                         Exceptional Value, Now Accessible..
                         </AccordionSummary>

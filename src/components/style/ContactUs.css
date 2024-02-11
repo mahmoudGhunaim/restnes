@@ -109,3 +109,64 @@
 .data-contact a:nth-child(1){
     align-items: flex-start;
 }
+@media screen and (max-width: 1024px){
+    .contact-container{
+        flex-direction: column;
+    }
+    .contact-map-sec{
+        background: url('/Pattern_3 1.svg'),rgba(34, 41, 51, 1);
+        width: 100%;
+        align-items: center;
+    }
+    .google-mapI{
+        width: 80vw !important;
+    }
+    .data-contact{
+        width: auto;
+    }
+    .contact-form form{
+        margin-left: 0;
+        width: 94vw;
+    }
+    .contact-form{
+        width: 100%;
+    }
+    .data-contact{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .contact-form{
+        padding: 0;
+    }
+}
+@media screen and (max-width: 767px) {
+    .contact-container{
+        flex-direction: column;
+    }
+    .contact-map-sec{
+        background: url('/Pattern_3 1.svg'),rgba(34, 41, 51, 1);
+        width: 100%;
+        align-items: center;
+    }
+    .google-mapI{
+        width: 300px !important;
+    }
+    .data-contact{
+        width: auto;
+    }
+    .contact-form form{
+        margin-left: 0;
+        width: 89vw;
+    }
+    .contact-form{
+        width: 100%;
+    }
+    .data-contact{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .contact-form{
+        padding: 0;
+    }
+    
+}

@@ -41,7 +41,7 @@ const FAQ = () => {
                     <div className='gold-line'></div>
                 </div>
                 <div className='guest-faq-acc'>
-                    <Accordion>
+                    <Accordion defaultExpanded>
                             <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls="panel1-content"
@@ -104,7 +104,7 @@ const FAQ = () => {
                     <div className='gold-line'></div>
                 </div>
                 <div className='property-owner-faq-acc'>
-                <Accordion>
+                <Accordion defaultExpanded>
                             <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls="panel1-content"
