@@ -39,7 +39,7 @@ const ImportData = ({ id55, setStartDate, setendDate, nights }) => {
         })));
         setTotalPrice(data.result.totalPrice);
       } catch (error) {
-        console.error('Error fetching calendar data:', error);
+        
       }
     };
 

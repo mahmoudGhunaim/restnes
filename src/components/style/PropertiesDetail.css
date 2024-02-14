@@ -294,6 +294,7 @@ button.btn.btn-primary{
 }
 .amenity-detail-single path{
     color: #364250;
+    display: block;
 }
 .amenity-detail-single{
     display: flex;
@@ -305,7 +306,9 @@ button.btn.btn-primary{
 }
 .check-in-out-mob{
     border:1px solid rgba(200, 200, 202, 1) ;
-    padding: 0px 10px 0 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
 }
 /* .check-in-out-mob-container{
     display: flex;
@@ -320,7 +323,196 @@ button.btn.btn-primary{
 button.react-datepicker__close-icon{
     display: none;
 }
-
+.fa-washer::after, .fa-dryer::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: url(/laundry-svgrepo-com.svg);
+    display: block;
+    background-size: cover;
+}
+.fa-hair-dryer{
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: url(/hair-dryer-svgrepo-com.svg);
+    display: block;
+    background-size: cover;
+}
+.fa-smoke{
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: url('/smoke-detector-svgrepo-com (1).svg');
+    display: block;
+    background-size: cover;
+}
+.infants{
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: url('/baby-bottle-2-svgrepo-com.svg');
+    display: block;
+    background-size: cover;
+}
+.fa-grill{
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: url('/grill-svgrepo-com (1).svg') ;
+    display: block ;
+    background-size: cover;
+}
+.fa-ironing-board{
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: url('/iron-board-svgrepo-com.svg') ;
+    display: block ;
+    background-size: cover;
+}
+.fa-toaster{
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: url('/toaster-1-svgrepo-com.svg') ;
+    display: block ;
+    background-size: cover;
+}
+.fa-dishwasher{
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: url('/dishwasher-2-svgrepo-com.svg') ;
+    display: block ;
+    background-size: cover;
+}
+.fa-microwave{
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: url('/microwave-2-svgrepo-com.svg') ;
+    display: block ;
+    background-size: cover;
+}
+.fa-oven{
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: url('/oven-svgrepo-com.svg') ;
+    display: block ;
+    background-size: cover;
+}
+.fa-stove{
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: url('/stove-svgrepo-com.svg') ;
+    display: block ;
+    background-size: cover;
+}
+.fa-refrigerator{
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: url('/refrigerator-pictogram-3-svgrepo-com.svg') ;
+    display: block ;
+    background-size: cover;
+}
+.fa-utensils-alt{
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: url('/kitchen-utensils-toys-couple-svgrepo-com.svg') ;
+    display: block ;
+    background-size: cover;
+}
+.Garage{
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: url('/garage-svgrepo-com.svg') ;
+    display: block ;
+    background-size: cover;
+}
+.Winery{
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: url('/winery-svgrepo-com.svg') ;
+    display: block ;
+    background-size: cover;
+}
+.Foosball{
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: url('/football-svgrepo-com.svg') ;
+    display: block ;
+    background-size: cover;
+}
+.Spices{
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: url('/spices-salt-pepper-svgrepo-com.svg') ;
+    display: block ;
+    background-size: cover;
+}
+.emergency{
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: url('/ambulance-svgrepo-com.svg') ;
+    display: block ;
+    background-size: cover;
+}
+.Police{
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: url('/police-car-9-svgrepo-com.svg') ;
+    display: block ;
+    background-size: cover; 
+}
+.fa-fence{
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: url('/massage-spa-body-treatment-svgrepo-com.svg') ;
+    display: block ;
+    background-size: cover;
+}
+.fa-closet{
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: url('/wardrobe-svgrepo-com.svg') ;
+    display: block ;
+    background-size: cover;
+}
+.Board-games{
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: url('/board-games-set-svgrepo-com.svg') ;
+    display: block ;
+    background-size: cover;
+}
+.Ceiling-fan{
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: url('/ceiling-fan-off-svgrepo-com.svg') ;
+    display: block ;
+    background-size: cover;
+}
+.fa{
+    color: #364250 !important;
+}
+.form-group-mobile .react-datepicker{
+    left: 50px;
+}
 @media screen and (max-width: 1024px){
     .image-list-inner{
         display: inline;

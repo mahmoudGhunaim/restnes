@@ -1,9 +1,9 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faWifi, faTv, faSnowflake, faUtensils, faHotTub, faFire, faSwimmingPool, faWasher, faDryer, faCheckCircle, faHairDryer, faTemperatureHigh, faSmoke, faSkullCrossbones, faFirstAid,  faConciergeBell, faTshirt, faVolumeUp, faPaw, faParking, faBalcony, faCouch, faChild, faIroningBoard, faBed, faGrill, faToaster, faDishwasher, faMicrowave, faOven, faCoffee, faShower, faBath, faSun, faStove, faRefrigerator, faTree, faUtensilsAlt, faLaptop, faDoorOpen, faLongArrowAltUp, faSwimmer, faCircle, faHistory, faHeart, faHandSparkles, faUtensilSpoon, faBinoculars, faShip, faKayak, faUmbrella, faWater, faMountain, faRoute, faWarehouseAlt, faFireAlt, faSkiing, faBicycle, faSuitcase, faDock, faCloset, faBlender, faChestFreezer, faIgloo, faWineBottle, faFish, faChair, faGolfBall, faTennisBall, faBasketballBall, faVolleyballBall, faBell, faFireExtinguisher, faLightbulb, faFileAlt, faLock, faWindowMaximize, faPlug, faBook, faGamepad, faBaby, faExchangeAlt, faBlind, faBroadcastTower,  faUmbrellaBeach, faCrosshairs, faSkating,  faShuttleVan, faSplotch, faToilet, faRoad, faHandHolding, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
 import React, { useState, useEffect } from 'react';
 import amenityImages from "../jsonFolder/amenities.json"
 import DatePicker from 'react-datepicker';
-
 import { DateRangePicker } from 'react-date-range';
 import 'react-date-range/dist/styles.css'; // main css file
 import 'react-date-range/dist/theme/default.css'; // theme css file
@@ -16,13 +16,14 @@ import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 import ImportData from './importData';
 import SinglePrice from '../components/singlePrice';
+import Seo from '../components/seo';
 import { Map, Circle, GoogleApiWrapper, InfoWindow } from 'google-maps-react';
+
 const mapStyles = {
   width: '100%',
   height: '450px',
 };
 const PropertiesDetail = (props) => {
-
   const [calendarAvailability, setCalendarAvailability] = useState({});
   const totalGuests = 1;
   const [properties, setProperties] = useState([]);
@@ -43,7 +44,7 @@ const PropertiesDetail = (props) => {
   const [activeMarker, setActiveMarker] = useState({});
   const [showingInfoWindow, setShowingInfoWindow] = useState(false);
   const [nights, setNights] = useState(0);
-  
+  const[ unavailable, setUnavailable] = useState([]);
   const formatDate = (dateString) => {
     const date = new Date(dateString);
     const year = date.getFullYear();
@@ -127,35 +128,6 @@ const PropertiesDetail = (props) => {
 
 
   
-    // const getAmenityImage = (amenityName) => {
-    //   const imageName = amenityName.toLowerCase().replace(/ /g, '-');
-    //   const imagePath = `/${amenityImages[amenityName] || imageName}.svg`;
-    //   return imagePath;
-    // };
-//   const queryParams = new URLSearchParams(window.location.search);
-//   const ids = queryParams.get('listingMapId'); // Replace with your actual ID value
-// const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI1ODYyMCIsImp0aSI6ImMyZmI1YjRiM2UxOGIyNWE0N2IwYWU5MmRiZDRlMjljNGY2MTg3MDRlY2M5MWM5ZTA5MDJlYzg4MWMzMjc4Y2MwOTZiODlkYjA0Y2ZmMjE3IiwiaWF0IjoxNjgwMjAxODE3LCJuYmYiOjE2ODAyMDE4MTcsImV4cCI6MTc0MzM2MDIxNywic3ViIjoiIiwic2NvcGVzIjpbImdlbmVyYWwiXSwic2VjcmV0SWQiOjEzNzAyfQ.ILnp24OkuH18ylsP6DDMWYX11fywUNi1XU_D5iPfpuDOFLpW4tcEQHlaYb94u8O3pERnv1iYENz_KPT6WGI6qFhL-gBA_tM10GWhJuZrSukIJYDWyv7x-WWsmfpUMcsvcQYXyWksAWY-wcCS4RmFtVIw0KWtVGJMy_h_yRs8Ypw'; // Replace with your actual token value
-// console.log('debug',JSON.stringify(data) );
-// fetch(`https://api.hostaway.com/v1/listings/${ids}/calendar`, {
-//   method: 'POST',
-//   headers: {
-//     'Content-Type': 'application/json',
-//     'Authorization': `Bearer ${token}`
-//   },
-//   data : {
-//     startingDate: startDate,
-//     endingDate: endDate,
-//     numberOfGuests: guests
-//   },
-//   body: JSON.stringify(data) // Make sure 'data' is defined with your desired JSON data
-// })
-// .then(response => response.json())
-// .then(data => {
-//   console.log(data); // Log the response data
-// })
-// .catch(error => {
-//   console.error('Error:', error);
-// });
 const fetchData = async () => {
   try {
     const queryParams = new URLSearchParams(window.location.search);
@@ -177,7 +149,7 @@ const fetchData = async () => {
 
     const responseData = await response.json();
   } catch (error) {
-    console.error('Error:', error);
+   
   }
 };
 
@@ -252,6 +224,11 @@ useEffect(() => {
 
       
       listingsdate.forEach((calendarDay) => {
+        if (calendarDay.isAvailable == 0) {
+          // Update state with new unavailable date
+          setUnavailable(prevUnavailable => [...prevUnavailable, calendarDay.date]);
+  
+        }
         if (calendarDay.status === 'blocked') {
           blockedDates.push(calendarDay.date); // Keep as string if not manipulating dates
         } else if (calendarDay.status === 'available') {
@@ -272,9 +249,9 @@ useEffect(() => {
     }
   };
 
-  if (startDate && endDate) {
+
     fetchData();
-  }
+  
 }, [startDate, endDate, totalGuests]);
 
 // Function to create a map of date availability
@@ -306,12 +283,12 @@ const processCalendarDates = (blocked, available) => {
 
   return calendarMap;
 
-}; // Add totalGuests to the dependency array if it's a state variable
+}; 
 
   const toggleDescription = () => {
     setIsDescriptionExpanded(!isDescriptionExpanded);
   };
- console.log('adada',startDate);
+ 
   const toggleAmenities = () => {
     setIsAmenitiesExpanded(!isAmenitiesExpanded);
   };
@@ -346,16 +323,16 @@ const processCalendarDates = (blocked, available) => {
   const firstListing = listings[0];
   const listingImages = firstListing.listingImages ? firstListing.listingImages.slice(0) : [];
   const firstImage = listingImages.length > 0 ? listingImages[0] : null;
-  console.log(148,firstListing.listingAmenities);
  const currentDate = new Date(new Date().setHours(0, 0, 0, 0));
  const queryParams2 = new URLSearchParams(window.location.search);
  const id2 = queryParams2.get('listingMapId');
  const formattedStartDate = formatDate(startDate);
     const formattedEndDate = formatDate(endDate);
       // Define the API URL
-     
+  
   return (
     <Layout>
+      <Seo />
       <section className='image-sec-det'>
          <div className='image-container-det'>  
           <div className="image-list-inner">
@@ -426,15 +403,17 @@ const processCalendarDates = (blocked, available) => {
                <h2>Amenities</h2>
                <div className="amenities-list">
                <div className='amenity-detail'>
-      {displayAmenities.map((amenity, index) => {
-        const icon = amenityImages[amenity.amenityName];
-        return (
-          <div key={index} className='amenity-detail-single'>
-            {icon && <FontAwesomeIcon icon={icon} />} {/* Render the icon if available */}
-            <p className='amenity-single-detail'>{amenity.amenityName}</p>
-          </div>
-        );
-      })}
+               {displayAmenities.map((amenity, index) => {
+                            const icon = amenityImages[amenity.amenityName];
+  
+                            return (
+                                <div key={index} className='amenity-detail-single'>
+                                  <i className={"fa " + icon}></i>
+                                   {icon && <FontAwesomeIcon icon={['fas', icon]} />}
+                                    <p className='amenity-single-detail'>{amenity.amenityName}</p>
+                                </div>
+                            );
+                        })}
     </div>
              </div>
             {shouldShowReadMoreAmenities && (
@@ -466,6 +445,8 @@ const processCalendarDates = (blocked, available) => {
         className="form-control"
         placeholderText="Select Check-In Date"
         minDate={currentDate}
+        excludeDates={unavailable.map(date => new Date(date))}
+
 />
           </div>
           <div className="form-group">
@@ -481,6 +462,7 @@ const processCalendarDates = (blocked, available) => {
   className="form-control"
   placeholderText="Select Check-Out Date"
   minDate={startDate || currentDate}
+  excludeDates={unavailable.map(date => new Date(date))}
 />
           </div>
           </div>
@@ -568,25 +550,27 @@ const processCalendarDates = (blocked, available) => {
           setendDate={formattedEndDate}
           nights={nights}
           /></h2>
-          <div className='check-in-out-mob-container'>
-          <div className='check-in-out-mob'>
+          <form className='check-in-out-mob-container'  onSubmit={handleBooking}>
+          <div className='check-in-out-mob' onClick={() => document.querySelector('.check-in-out-mob .react-datepicker-wrapper input').click()}>
       <label>Check-In / Check-Out</label>
-      <DatePicker
-            selectsRange={true}
-            startDate={startDate}
-            endDate={endDate}
-            onChange={(date) => { 
-                const [startDate, endDate] = date;
-                setStartDate(startDate);
-                setEndDate(endDate);       
-                handleDateChange(startDate, endDate);
-            }}
-            isClearable={true}
-            placeholderText="Select a date range"
-        />
+          <DatePicker
+                selectsRange={true}
+                startDate={startDate}
+                endDate={endDate}
+                onChange={(date) => { 
+                    const [startDate, endDate] = date;
+                    setStartDate(startDate);
+                    setEndDate(endDate);       
+                    handleDateChange(startDate, endDate);
+                }}
+                isClearable={true}
+                placeholderText="Select a date range"
+                minDate={currentDate}
+                excludeDates={unavailable.map(date => new Date(date))}
+            />
         </div>
          <button type="submit" className="btn btn-primary">Book Now</button>
-         </div>
+         </form>
     </div>
         </div>
        

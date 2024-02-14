@@ -15,6 +15,7 @@
     width: 50%;
     color: rgba(255, 255, 255, 1);
     font-weight: 400;
+    text-transform: capitalize;
 }
 .hero-content-Management {
     display: flex;
@@ -74,12 +75,13 @@
 }
 .Service-Description-des {
     margin-top: 20px;
+    width: 750px;
 }
 .Service-Description-des h1{
     font-size: 50px;
     font-family: 'Cinzel';
     color: #364250;
-    width: 70%;
+    width: 100%;
 }
 .Service-Description-des p{
     margin-top: 30px;
@@ -174,7 +176,7 @@
 path{
     color: white;
 }
-.We-hear-you-title .MuiAccordionSummary-content.MuiAccordionSummary-contentGutters.css-o4b71y-MuiAccordionSummary-content{
+div[aria-controls*="panel"] div{
     color: #FCFCFC;
     font-size: 24px;
     font-family: 'Cinzel';
@@ -323,6 +325,16 @@ path{
     display: none;
 }
 @media screen and (max-width: 1024px) {
+    .Service-Description-sec{
+        justify-content: center;
+    }
+    .Service-Description-contanier{
+        width: 90%;
+    }
+    .Service-Description-des{
+        width: 100%;
+
+    }
     .Features-cards{
         grid-template-columns: repeat(2, 1fr);
     }
@@ -362,7 +374,7 @@ path{
     .We-hear-you-img img{
         width: 95vw;
     }
-    .We-hear-you-title .MuiAccordionSummary-content.MuiAccordionSummary-contentGutters.css-o4b71y-MuiAccordionSummary-content{
+    div[aria-controls*="panel"] div{
         font-size: 16px;
     }
     .our-solution-content h1{
@@ -400,5 +412,17 @@ path{
     }
     .mobile-img-process{
         display: block !important;
+    }
+    .Service-Description-sec,.Features-sec,.We-hear-you-sec,.our-solution-sec,.The-Process-sec,.Qualification-sec{
+        padding: 50px 0;
+    }
+    .Features-sec{
+        padding-bottom:5px ;
+    }
+    .hero-content-Management h1{
+        margin-top: 50px;
+    }
+    .hero-content-Management span{
+        top: 130px;
     }
 }

@@ -111,7 +111,7 @@ body{
     padding: 120px 0px;
 }
 .dual-commitment-des{
-    width: 50%;
+    width: 685px;
 }
 .dual-commitment-des span{
     color: #AC9576;
@@ -124,7 +124,7 @@ body{
     margin-top: 10px;
     font-family: 'Cinzel';
     font-size: 50px;
-    width: 80%;
+    width: 100%;
 }
 .gold-line{
     height: 1px;
@@ -241,12 +241,14 @@ justify-content: center;
  }
  @media screen and (max-width: 1024px) {
     .hero-content h1{
+        margin-top: 50px;
         font-size: 38px;
         width: 100%;
         text-align: left;
     }
     .hero-content span{
         font-size: 38px;
+        top: 130px;
     }
     .hero-content p{
         width: 100%;
@@ -302,11 +304,20 @@ justify-content: center;
         font-size: 16px;
     }
  }
- @media screen and (max-width: 720px){
+ @media screen and (max-width: 767px){
     .Meet-Our-Team-img img {
         width: 100%;
     }
     .Meet-Our-Team-contaner{
         flex-direction: column;
+    }
+    .aboutus-des-sec{
+        margin-top: 50px;
+    }
+    .dual-commitment-container{
+        padding: 50px;
+    }
+    .aboutus-des-p2{
+        margin-bottom: 50px;
     }
  }

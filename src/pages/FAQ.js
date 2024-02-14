@@ -26,7 +26,7 @@ const FAQ = () => {
                     <span>Service Description</span>
                     <h1>Your curiosity, satisfied.</h1>
                     <div className='gold-line'></div>
-                    <p>Whether you're indulging in a luxurious stay or considering our property management services, we've got answers to your questions right here.<br/>Can't find what you're seeking? Please feel free to <Link to="">contact us</Link></p>
+                    <p>Whether you're indulging in a luxurious stay or considering our property management services, we've got answers to your questions right here.<br/>Can't find what you're seeking? Please feel free to <Link to='/ContactUs' >contact us</Link></p>
                 </div>
                 <div className='Service-Description-img1'>
                     <img src='/Frame 48096235.svg'/>
@@ -46,6 +46,7 @@ const FAQ = () => {
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls="panel1-content"
                             id="panel1-faq"
+                            className='acc-title'
                             >
                             Can we celebrate an event at this property?
                             </AccordionSummary>
@@ -59,6 +60,7 @@ const FAQ = () => {
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls="panel2-content"
                             id="panel2-faq"
+                            className='acc-title'
                             >
                             What can I do while visiting Kelowna?
                             </AccordionSummary>
@@ -73,6 +75,7 @@ const FAQ = () => {
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls="panel3-content"
                             id="panel3-faq"
+                            className='acc-title'
                             >
                             Do you allow pets?
                             </AccordionSummary>
@@ -85,6 +88,7 @@ const FAQ = () => {
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls="panel3-content"
                             id="panel3-faq"
+                            className='acc-title'
                             >
                            What is your cancellation policy?
                             </AccordionSummary>
@@ -109,6 +113,7 @@ const FAQ = () => {
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls="panel1-content"
                             id="panel1-faq"
+                            className='acc-title'
                             >
                             What is included with your property management services?
                             </AccordionSummary>
@@ -125,6 +130,7 @@ Our short-term property management is full service, which means that in addition
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls="panel2-content"
                             id="panel2-faq"
+                            className='acc-title'
                             >
                            How much do your services cost?
                             </AccordionSummary>
@@ -139,6 +145,7 @@ We’ll take care of payments for all maintenance services, and invoice you for 
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls="panel3-content"
                             id="panel3-faq"
+                            className='acc-title'
                             >
                             How do you know if a guest is the right fit?
                             </AccordionSummary>

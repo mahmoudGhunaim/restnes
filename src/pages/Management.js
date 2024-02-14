@@ -14,7 +14,7 @@ const Management = () => {
         <section className='hero-sec-Management'>
             <div className='hero-container-Management'>
                 <div className='hero-content-Management'>
-                    <h1>Luxury Rental Management in British Columbia</h1>
+                    <h1>Vacation home management in British Columbia</h1>
                     <span>Home owner</span>
                     <p>Join hands with our experts and transform your investment journey.<br/>Your vacation rental should be a gateway to peace, not a source of stress. Entrust it to us and witness the seamless blend of profitability and tranquility. Our province-wide, full-service short-term rental management ensures your peace of mind, leaving you to savor the rewards.</p>
                     <button>Unveil Stress-Free Rental Management</button>
@@ -25,7 +25,7 @@ const Management = () => {
             <div className='Service-Description-contanier'>
                 <div className='Service-Description-des'>
                     <span>Service Description</span>
-                    <h1>Unparalleled Full-Service short-term Rental Management</h1>
+                    <h1>Unparalleled Full-Service STR Management</h1>
                     <div className='gold-line'></div>
                     <p>Rest easy knowing that with your lavish property in our meticulous care—whether you’re expecting visitors, stopping by for your own summer getaway, or spending winter at home—is always in the condition that you expect: flawless.<br/>From orchestrating year-round maintenance to screening your potential guests to ensure the perfect fit, allow us to take care of everything, so you don’t have to.<br/>Whether it’s marketing, guest management, furniture insurance, pool maintenance, lawn mowing, housekeeping or snow removal: you name it, we’ll take care of it to your standard, at a rate you’ll feel good about.</p>
                 </div>
@@ -99,7 +99,7 @@ const Management = () => {
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls="panel1-content"
                             id="panel1-header"
-                            
+                            className='acc-title'
                         >
                         Exceptional Value, Now Accessible..
                         </AccordionSummary>
@@ -109,6 +109,7 @@ const Management = () => {
                     </Accordion>
                     <Accordion>
                         <AccordionSummary
+                        className='acc-title'
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel2-content"
                         id="panel2-header"
@@ -124,6 +125,7 @@ const Management = () => {
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel3-content"
                         id="panel3-header"
+                        className='acc-title'
                         >
                         Effortless Earnings Maximization
                         </AccordionSummary>

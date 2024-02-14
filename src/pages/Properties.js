@@ -10,6 +10,7 @@ import 'swiper/css/pagination';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 import { Link } from "gatsby"
+import LazyLoad from 'react-lazyload';
 const Properties = () => {
   const [listings, setListings] = useState([]);
   const [error, setError] = useState('');
@@ -88,18 +89,20 @@ const Properties = () => {
   onSwiper={(swiper) => console.log(swiper)}
   onSlideChange={() => console.log('slide change')}
 >
-  {listing.listingImages.map((image, index) => (
+{listing.listingImages.map((image, index) => (
     <SwiperSlide key={image.id || index} className='properties-slide'> {/* Ensure 'key' is on SwiperSlide */}
-      <img src={image.url} alt={image.caption} />
+        <LazyLoad height={200} once>
+            <img src={image.url} alt={image.caption} />
+        </LazyLoad>
     </SwiperSlide>
-  ))}
+))}
 </Swiper>
          {/* {firstListing.listingImages.length > 0 && (
             <img src={firstListing.listingImages[0].url} alt={firstListing.listingImages[0].caption} />
           )} */}
         <div className='properties-card-des'>
           <h3>{listing.externalListingName}</h3>
-          <h6>House in {listing.city} , {listing.state}</h6>
+          {/* <h6>House in {listing.city} , {listing.state}</h6> */}
           <div className='card-des'>
             <span><img src='/bed-solid 1.svg'/> {listing.bedroomsNumber}</span>
             <span><img src='/bath-solid 1.svg'/> {listing.bathroomsNumber}</span>

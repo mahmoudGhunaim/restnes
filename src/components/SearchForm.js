@@ -13,10 +13,8 @@ const SearchForm = () => {
     try {
       const results = await getProperties(checkInDate, checkOutDate, adults + children);
       // Do something with the results
-      console.log(results);
     } catch (error) {
       // Handle the error
-      console.error(error);
     }
   };
 

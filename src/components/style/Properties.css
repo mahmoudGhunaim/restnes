@@ -45,6 +45,7 @@
     color: #222933;
     font-size: 20px;
     width: 19vw;
+    margin-bottom: 30px;
     font-family: 'Cinzel';
     white-space: nowrap; /* Prevent text from wrapping */
     overflow: hidden; /* Hide overflow text */
@@ -108,8 +109,14 @@
     .form-property{
       margin-top: 25px;
     }
+    .properties-card-des h3{
+      width: 35vw;
+    }
   }
   @media screen and (max-width: 767px){
+    .properties-sec{
+      padding: 50px 0;
+    }
     .properties-container{
       grid-template-columns:repeat(1,1fr);
       justify-items: center;
@@ -127,5 +134,8 @@
     }
     .form-property{
       margin-top: 25px;
+    }
+    .properties-card-des h3{
+      width: 65vw;
     }
   }

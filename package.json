@@ -34,6 +34,7 @@
     "react-datepicker": "^6.1.0",
     "react-dom": "^18.2.0",
     "react-easepick": "^1.0.0",
+    "react-lazyload": "^3.2.0",
     "react-leaflet": "^4.2.1",
     "react-paginate": "^8.2.0",
     "reactstrap": "^9.2.2",

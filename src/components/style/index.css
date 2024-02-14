@@ -30,11 +30,14 @@ body{
     width: 90%;
     justify-content: space-between;
 }
+.Home-left-sec{
+    width: 600px;
+}
 .Home-left-sec h1{
     color: rgba(255, 255, 255, 1);
     font-size: 64px;
     font-weight: 400;
-    width: 45%;
+    width: 100%;
     font-family: 'Cinzel', serif;
 }
 .Home-left-sec span{
@@ -47,7 +50,7 @@ body{
     rotate: -12deg;
 }
 .Home-right-sec{
-    width: 20%;
+    width: 350px;
 }
 .Home-right-sec p{
     color: rgba(255, 255, 255, 1);
@@ -217,10 +220,16 @@ section.card-sec-home {
     margin-right: 50px;
     width: 95%;
 } 
+.swiper.swiper-initialized.swiper-horizontal,.swiper-wrapper {
+    display: flex;
+}
 @media screen and (max-width: 1024px){
     .Home-Head-container{
         flex-direction: column;
         gap: 40px;
+    }
+    .Home-left-sec{
+        width: 100%;
     }
     .Home-left-sec h1{
         font-size: 38px;
@@ -253,6 +262,12 @@ section.card-sec-home {
 }
 }
 @media screen and (max-width: 767px) {
+    section.card-sec-home,.description-home-sec,.slider-container-home,.Home-Head-sec{
+        padding: 50px 0;
+    }
+    .Home-left-sec span{
+        top: 130px;
+    }
     .slider-title-home-con {
         margin-bottom: -10px;
     }

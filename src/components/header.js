@@ -10,7 +10,7 @@ const Header = () => {
     <header className="header-sec">
     <div className="header-container">
       <div className="logo-sec">
-        <img src="/Restnest.svg"/>
+      <Link to="../"><img src="/Restnest.svg"/></Link>
       </div>
       <div className="link-family">
         <Link to="../">Home</Link>
@@ -32,7 +32,7 @@ const Header = () => {
         <ModalHeader toggle={toggle}></ModalHeader>
         <ModalBody>
         <div className="logo-sec-mob">
-          <img src="/Restnest.svg"/>
+        <Link to="../"><img src="/Restnest.svg"/></Link>
         </div>
         <div className='navBar-hamburger'>
           <Link to="../">Home</Link>

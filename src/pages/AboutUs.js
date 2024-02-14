@@ -51,7 +51,7 @@ const AboutUs = () => {
                 </div>
             </div>
         </section>
-        <section className='Meet-Our-Team-sec'>
+        {/* <section className='Meet-Our-Team-sec'>
             <div className='Meet-Our-Team-contaner'>
                 <div className='Meet-Our-Team-img'>
                     <h3>Shervin</h3>
@@ -64,7 +64,7 @@ const AboutUs = () => {
                     <p>The driving force behind RestNest is Shervin, a seasoned professional with a profound understanding of luxury property management. His foresight and dedication are the cornerstones of RestNest's ethos and continuous expansion.</p>
                 </div>
             </div>
-        </section>
+        </section> */}
         <section className='footer-sec-about'>
             <div className='footer-container-about'>
                 <div className='footer-des-about'>
