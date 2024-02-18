@@ -8,7 +8,7 @@ export const query = graphql`
   query($slug: String!) {
     contentfulPost(slugData: { eq: $slug }) {
       title
-      id
+      id 
       image {
         url
       }
