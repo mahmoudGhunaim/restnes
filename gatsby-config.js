@@ -4,9 +4,10 @@
  * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/
  */
 
-/**
- * @type {import('gatsby').GatsbyConfig}
- */
+const dotenv = require('dotenv')
+if (process.env.NODE_ENV !== 'production'){
+  dotenv.config()
+}
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -31,15 +32,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-starter-default`,
@@ -53,5 +45,12 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-  ],
+    {
+      resolve:`gatsby-source-contentful`,
+      options:{
+        spaceId:`nxdnf6jsmmfx`,
+        accessToken: `4yTV12ATv-MdqSpris_Ben1ph8Wee0TP9jby_EiIf5c`,
+      }
+    },
+    ],
 }

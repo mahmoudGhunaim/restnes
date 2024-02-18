@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import "../components/style/Properties.css"
 import Layout from "../components/layout"
-import Form from '../components/form';
+import Form from '../components/Form';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -14,7 +14,44 @@ import LazyLoad from 'react-lazyload';
 const Properties = () => {
   const [listings, setListings] = useState([]);
   const [error, setError] = useState('');
+  const [filter, setFilter] = useState({
+    startDate: '',
+    endDate: '',
+    numAdults: 0,
+    numChildren: 0,
+  });
+  useEffect(() => {
+    const totalGuests = filter.numAdults + filter.numChildren;
+
+    const url = new URL('https://api.hostaway.com/v1/listings');
+    const headers = new Headers({
+      'Authorization': `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI1ODYyMCIsImp0aSI6ImMyZmI1YjRiM2UxOGIyNWE0N2IwYWU5MmRiZDRlMjljNGY2MTg3MDRlY2M5MWM5ZTA5MDJlYzg4MWMzMjc4Y2MwOTZiODlkYjA0Y2ZmMjE3IiwiaWF0IjoxNjgwMjAxODE3LCJuYmYiOjE2ODAyMDE4MTcsImV4cCI6MTc0MzM2MDIxNywic3ViIjoiIiwic2NvcGVzIjpbImdlbmVyYWwiXSwic2VjcmV0SWQiOjEzNzAyfQ.ILnp24OkuH18ylsP6DDMWYX11fywUNi1XU_D5iPfpuDOFLpW4tcEQHlaYb94u8O3pERnv1iYENz_KPT6WGI6qFhL-gBA_tM10GWhJuZrSukIJYDWyv7x-WWsmfpUMcsvcQYXyWksAWY-wcCS4RmFtVIw0KWtVGJMy_h_yRs8Ypw` // Use your actual API token
+    });
+console.log('Filter Called');
+    url.search = new URLSearchParams({
+      availabilityDateStart: filter.startDate,
+      availabilityDateEnd: filter.endDate,
+      availabilityGuestNumber: totalGuests,
+    }).toString();
+
+    fetch(url, { headers })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok333');
+        }
+        return response.json();
+      })
+      .then(data => {
+        setListings(data.result); // Assuming 'result' is the array of listings
+      })
+      .catch(error => {
+        setError(error.message);
+      });
+  }, [filter]); // Dependency array now includes `filter`
   
+  const handleFilter = (startDate, endDate, numAdults, numChildren) => {
+    setFilter({ startDate, endDate, numAdults, numChildren });
+  };
   useEffect(() => {
     // Extract query parameters from the URL
     const queryParams = new URLSearchParams(window.location.search);
@@ -70,7 +107,7 @@ const Properties = () => {
   return (
     <Layout>
       <section className='form-property'>
-      <Form/>
+      <Form onFilter={handleFilter} />
       </section>
       <section className='properties-sec'>
     <div className="properties-container">

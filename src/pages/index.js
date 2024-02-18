@@ -1,10 +1,12 @@
 import React, { useRef } from 'react';
+import  { useState, useEffect } from 'react';
+
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import "../components/style/index.css"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import Form from "../components/form"
+import Form from "../components/Form"
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -12,7 +14,50 @@ import CustmerSay from "../components/CustmerSay"
 import { Swiper, SwiperSlide,useSwiper } from 'swiper/react';
 import FooterSec from '../components/FooterSec';
 
-const IndexPage = () => (
+const IndexPage = () => {
+  const [listings, setListings] = useState([]);
+  const [error, setError] = useState('');
+
+  useEffect(() => {
+    // Extract query parameters from the URL
+    const queryParams = new URLSearchParams(window.location.search);
+    const startDate = queryParams.get('start_date') || '';
+    const endDate = queryParams.get('end_date') || '';
+    const numAdults = parseInt(queryParams.get('num_adults'), 10) || 0;
+    const numChildren = parseInt(queryParams.get('num_children'), 10) || 0;
+    const totalGuests = numAdults + numChildren;
+
+    // Hostaway API token
+    const token = 'YOUR_API_TOKEN'; // Replace 'YOUR_API_TOKEN' with your actual token
+
+    // Prepare the API request
+    const url = new URL('https://api.hostaway.com/v1/listings');
+    const headers = new Headers({
+      'Authorization': `Bearer ${token}`
+    });
+
+    url.search = new URLSearchParams({
+      availabilityDateStart: startDate,
+      availabilityDateEnd: endDate,
+      availabilityGuestNumber: totalGuests,
+    }).toString();
+
+    // Make the API call
+    fetch(url, { headers })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        setListings(data.result); // Assuming 'result' is the array of listings
+      })
+      .catch(error => {
+        setError(error.message);
+      });
+  }, []);
+  return (
   <Layout>
     <section className='Home-Head-sec'>
       <div className='Home-Head-container'>
@@ -153,7 +198,8 @@ const IndexPage = () => (
     </section>
     <FooterSec/>
   </Layout>
-)
+  );
+};
 
 
 
