@@ -9,6 +9,7 @@ export const query = graphql`
     contentfulPost(slugData: { eq: $slug }) {
       title
       id
+      
       image {
         url
       }
@@ -39,6 +40,7 @@ const BlogPost = ({ data }) => {
         <div className="post-content-text">
            <h1>{data.contentfulPost.title}</h1>
            <img src={data.contentfulPost.image.url} />
+           <h2>adwdawd  </h2>
         </div>
       </article>
     </Layout>

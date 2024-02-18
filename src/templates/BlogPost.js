@@ -12,6 +12,7 @@ export const query = graphql`
       image {
         url
       }
+      
     }
   }
 `;
@@ -39,6 +40,7 @@ const BlogPost = ({ data }) => {
         <div className="post-content-text">
            <h1>{data.contentfulPost.title}</h1>
            <img src={data.contentfulPost.image.url} />
+           
         </div>
       </article>
     </Layout>
